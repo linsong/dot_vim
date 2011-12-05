@@ -104,7 +104,9 @@ endif
 " useful, but keep it for now
 :set hidden
 
-set statusline=%<%f\ [%{&ff}]%{StatusInfo()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+if exists('*StatusInfo')
+  set statusline=%<%f\ [%{&ff}]%{StatusInfo()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+endif
 
 " setting for completion 
 if v:version >= 700
@@ -1222,7 +1224,9 @@ endif " has("autocmd")
 
     "## Plugin related settings {{{1
     
-    call pathogen#infect() 
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+    source ~/.vim/bundles
 
     "### setting for winmanager.vim {{{2
         ":let g:winManagerWindowLayout = "FileExplorer,TagsExplorer|BufExplorer"
@@ -1776,6 +1780,8 @@ endif " has("autocmd")
     let g:xptemplate_brace_complete = 0
 
     let g:xptemplate_pum_tab_nav = 1
+
+    set runtimepath+=~/.vim/personal/
     "}}}2
     
      

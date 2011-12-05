@@ -2,23 +2,105 @@
 " required vundles 
 Bundle 'gmarik/vundle'
 
-" My Bundles {{{1
-
-" Vundles on github {{{2
-Bundle 'tpope/vim-fugitive'
+" Basic Editing {{{1
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-" }}}2
-
-" Vundles on vim-scripts {{{2
+Bundle 'ervandew/supertab'
+Bundle 'bsl/obviousmode'
+Bundle 'drmingdrmer/xptemplate.git'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-" }}}2
-
-" non github git repos {{{2
-" }}}2
-
+Bundle 'surround.vim'
+Bundle 'grep.vim'
+Bundle 'Align'
+Bundle 'LargeFile'
+Bundle 'ZoomWin'
+Bundle 'AutoComplPop'
+Bundle 'camelcasemotion'
+Bundle 'foldutil.vim'
+Bundle 'Mark'
+Bundle 'bsl/obviousmode'
+Bundle 'scratch.vim'
+Bundle 'AfterColors.vim'
 " }}}1
 
+" Coding {{{1
+Bundle 'scrooloose/syntastic.git'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'majutsushi/tagbar'
+Bundle 'AndrewRadev/linediff.vim.git'
+Bundle 'xuhdev/SingleCompile'
+Bundle 'endwise.vim'
+Bundle 'Bexec'
+" }}}1
 
+" Advanced Editing {{{1
+Bundle 'vimwiki'
+Bundle 'vis'
+Bundle 'VisIncr'
+Bundle 'bufexplorer.zip'
+Bundle 'genutils'
+Bundle 'foldcol.vim'
+Bundle 'sessionman.vim'
+Bundle 'toggle_words.vim'
+"}}}1
+
+" Utils {{{1
+Bundle 'lpenz/vimcommander'
+Bundle 'renamer.vim'
+Bundle 'DirDiff.vim'
+Bundle 'DirDo.vim'
+Bundle 'greplace.vim'
+Bundle 'ViewOutput'
+Bundle 'ScreenShot'
+Bundle 'HiColors'
+" TVO: The Vim Outliner
+Bundle "http://vim.sourceforge.net/scripts/script.php?script_id=517"
+Bundle 'TwitVim'
+"}}}1
+
+" Ruby Vundles {{{1
+Bundle 'janx/vim-rubytest'
+Bundle 'tpope/vim-rails.git'
+Bundle 'ri-browser'
+Bundle 'vim-ruby/vim-ruby.git'
+" }}}1
+
+" Python Vundles {{{1
+Bundle 'python.vim'
+Bundle 'fs111/pydoc.vim'
+Bundle 'kevinw/pyflakes-vim.git'
+Bundle 'python_match.vim'
+" }}}1
+
+" Web Vundles {{{1
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'mattn/zencoding-vim'
+Bundle 'sukima/xmledit'
+Bundle 'jsbeautify'
+" }}}1
+
+" Git Utils {{{1
+Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
+Bundle 'Gist.vim'
+"}}}1
+
+" C/C++ Bundles {{{1
+for i in ['c.vim', 'CRefVim']
+  Bundle i
+endfor
+" }}}1
+
+" SQL Vundles {{{1
+Bundle 'SQLUtilities'
+Bundle 'dbext.vim'
+" }}}1
+
+" games {{{1
+for name in ['sokoban.vim', 'TeTrIs.vim']
+  Bundle name
+endfor
+"}}}1
+
+" vim: ft=vim

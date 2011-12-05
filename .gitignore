@@ -5,9 +5,6 @@
 .viminfo
 .Trash/
 .DS_Store/
-.ssh/
-vimwiki/
-.vimprojects
 foo.*
 .vim-fuf
 .gitconfig
@@ -30,11 +27,9 @@ ftags
 AsNeeded/ANmenu
 AsNeeded/ANtags
 *.jax
-blog/linsong.github.com/
 temp
 passwords.vim
 plugin/ANcmds.vim
-bundle/**/.git
 doc/tags-ja
 manualload/vimim.pinyin_fcitx.txt
 .serverauth.*
@@ -45,3 +40,4 @@ manualload/vimim.pinyin_fcitx.txt
 sessions
 *.pyc
 *.wcd
+bundle/
