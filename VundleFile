@@ -88,7 +88,7 @@ Bundle 'Gist.vim'
 
 " C/C++ Bundles {{{1
 for i in ['c.vim', 'CRefVim']
- "Bundle i
+  Bundle i
 endfor
 " }}}1
 
@@ -99,7 +99,7 @@ Bundle 'dbext.vim'
 
 " games {{{1
 for name in ['sokoban.vim', 'TeTrIs.vim']
- "Bundle name
+  Bundle name
 endfor
 "}}}1
 

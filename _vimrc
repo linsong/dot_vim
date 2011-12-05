@@ -1374,7 +1374,14 @@ endif " has("autocmd")
     "### setting for NERD_comments.vim {{{2
     "make NERD_comments silent 
     let g:NERDMenuMode=0
-    :map <silent> ,ct :call NERDComment(0, 'toggle')<CR>
+    :nnoremap <silent> ,ct :call NERDComment(0, 'toggle')<CR>
+    :vnoremap <silent> ,ct :call NERDComment(1, 'toggle')<CR>
+    :nnoremap <silent> ,cn :call NERDComment(0, 'nested')<CR>
+    :vnoremap <silent> ,cn <ESC>:call NERDComment(1, 'nested')<CR>
+    :nnoremap <silent> ,cu :call NERDComment(0, 'uncomment')<CR>
+    :vnoremap <silent> ,cu <ESC>:call NERDComment(1, 'uncomment')<CR>
+    :nnoremap <silent> ,cy <ESC>:call NERDComment(0, 'yank')<CR>
+    :vnoremap <silent> ,cy <ESC>:call NERDComment(1, 'yank')<CR>
     "### }}}2   
 
     ""### setting for MRU.vim {{{2
