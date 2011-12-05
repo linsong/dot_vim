@@ -6,20 +6,12 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ervandew/supertab'
 Bundle 'bsl/obviousmode'
-Bundle 'drmingdrmer/xptemplate.git'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'surround.vim'
 Bundle 'grep.vim'
-Bundle 'Align'
-Bundle 'LargeFile'
-Bundle 'ZoomWin'
-Bundle 'AutoComplPop'
-Bundle 'camelcasemotion'
-Bundle 'foldutil.vim'
 Bundle 'Mark'
 Bundle 'bsl/obviousmode'
-Bundle 'scratch.vim'
 Bundle 'AfterColors.vim'
 " }}}1
 
@@ -35,14 +27,22 @@ Bundle 'Bexec'
 " }}}1
 
 " Advanced Editing {{{1
+Bundle 'AutoComplPop'
 Bundle 'vimwiki'
 Bundle 'vis'
 Bundle 'VisIncr'
 Bundle 'bufexplorer.zip'
+Bundle 'Align'
+Bundle 'LargeFile'
+Bundle 'ZoomWin'
 Bundle 'genutils'
 Bundle 'foldcol.vim'
+Bundle 'foldutil.vim'
 Bundle 'sessionman.vim'
 Bundle 'toggle_words.vim'
+Bundle 'drmingdrmer/xptemplate.git'
+Bundle 'scratch.vim'
+Bundle 'camelcasemotion'
 "}}}1
 
 " Utils {{{1
@@ -88,7 +88,7 @@ Bundle 'Gist.vim'
 
 " C/C++ Bundles {{{1
 for i in ['c.vim', 'CRefVim']
-  Bundle i
+ "Bundle i
 endfor
 " }}}1
 
@@ -99,7 +99,7 @@ Bundle 'dbext.vim'
 
 " games {{{1
 for name in ['sokoban.vim', 'TeTrIs.vim']
-  Bundle name
+ "Bundle name
 endfor
 "}}}1
 
