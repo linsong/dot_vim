@@ -54,9 +54,9 @@ Bundle 'greplace.vim'
 Bundle 'ViewOutput'
 Bundle 'ScreenShot'
 Bundle 'HiColors'
-" TVO: The Vim Outliner
-Bundle "http://vim.sourceforge.net/scripts/script.php?script_id=517"
+Bundle 'TVO--The-Vim-Outliner'
 Bundle 'TwitVim'
+Bundle 'vimGTD'
 "}}}1
 
 " Ruby Vundles {{{1

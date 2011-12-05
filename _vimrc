@@ -1226,7 +1226,7 @@ endif " has("autocmd")
     
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
-    source ~/.vim/bundles
+    source ~/.vim/VundleFile
 
     "### setting for winmanager.vim {{{2
         ":let g:winManagerWindowLayout = "FileExplorer,TagsExplorer|BufExplorer"
