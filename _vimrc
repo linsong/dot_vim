@@ -104,9 +104,7 @@ endif
 " useful, but keep it for now
 :set hidden
 
-if exists('*StatusInfo')
-  set statusline=%<%f\ [%{&ff}]%{StatusInfo()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-endif
+set statusline=%<%f\ [%{&ff}]%{StatusInfo()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " setting for completion 
 if v:version >= 700
@@ -1374,9 +1372,9 @@ endif " has("autocmd")
     "### }}}2   
 
     "### setting for NERD_comments.vim {{{2
-    " make NERD_comments silent 
+    "make NERD_comments silent 
     let g:NERDMenuMode=0
-    :map <silent> ,ct :call NERDComment(1, 'toggle')<CR>
+    :map <silent> ,ct :call NERDComment(0, 'toggle')<CR>
     "### }}}2   
 
     ""### setting for MRU.vim {{{2
