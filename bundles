@@ -1,0 +1,24 @@
+" let Vundle manage Vundle
+" required vundles 
+Bundle 'gmarik/vundle'
+
+" My Bundles {{{1
+
+" Vundles on github {{{2
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+" }}}2
+
+" Vundles on vim-scripts {{{2
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+" }}}2
+
+" non github git repos {{{2
+" }}}2
+
+" }}}1
+
+
