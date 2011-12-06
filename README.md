@@ -1,27 +1,32 @@
 ## About 
 
-I put all my vim config files at [Dot Vim], it includes many kinds of plugins, colorschemes and templates(via powerful [xptemplate]). These vim extensions makes vim a very powerful enviroment to coding, editing, file management and many more. 
+I put all my vim config files at [Dot Vim], it includes many kinds of plugins, colorschemes and templates(via powerful [xptemplate]). These vim extensions make vim a very powerful enviroment for coding, editing, file management and many more. 
 
 ## Quick Start
 
 1. Clone it 
+
    ```
    $ git clone http://github.com/linsong/dot_vim.git ~/.vim
    ```
    NOTE: you'd better backup your local .vim folder first. 
 
 2. Install and Configure [Vundle]
+   Please refers to [Vundle] page for details, that's pretty simple.
+
 3. Link vimrc files to your home 
+
   ```
   $ cd ~
   $ ln -s ~/.vim/_vimrc .vimrc 
   $ ln -s ~/.vim/_gvimrc .gvimrc
   ```
+
   NOTE: you'd better backup your local .vimrc and .gvimrc files first. 
   For Windows user, .vimrc should be _vimrc, .gvimrc should be _gvimrc
 
 4. Install vim plugins 
-   There is a file named VundleFile under .vim folder, it include many powerful plugins. To install them, launch vim and run ':BundleInstall', then have a break and you will a powerful enviroment for hacking! 
+   There is a file named VundleFile under .vim folder, it already includes many powerful plugins. You can add more or disable some. After you feel comfortable with it, save it, relaunch vim and run vim command ':BundleInstall'. Now you can have a break and later you will a powerful enviroment for hacking! 
 
 Happy Vimming!
 
