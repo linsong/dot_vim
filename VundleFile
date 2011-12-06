@@ -13,17 +13,20 @@ Bundle 'grep.vim'
 Bundle 'Mark'
 Bundle 'bsl/obviousmode'
 Bundle 'AfterColors.vim'
+Bundle 'camelcasemotion'
+Bundle 'toggle_words.vim'
+Bundle 'scratch.vim'
 " }}}1
 
 " Coding {{{1
 Bundle 'scrooloose/syntastic.git'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
-Bundle 'AndrewRadev/linediff.vim.git'
-Bundle 'xuhdev/SingleCompile'
+"Bundle 'scrooloose/nerdtree'
+"Bundle 'majutsushi/tagbar'
+"Bundle 'AndrewRadev/linediff.vim.git'
+"Bundle 'xuhdev/SingleCompile'
 Bundle 'endwise.vim'
-Bundle 'Bexec'
+"Bundle 'Bexec'
 " }}}1
 
 " Advanced Editing {{{1
@@ -39,30 +42,29 @@ Bundle 'genutils'
 Bundle 'foldcol.vim'
 Bundle 'foldutil.vim'
 Bundle 'sessionman.vim'
-Bundle 'toggle_words.vim'
 Bundle 'drmingdrmer/xptemplate.git'
-Bundle 'scratch.vim'
-Bundle 'camelcasemotion'
 "}}}1
 
 " Utils {{{1
-Bundle 'lpenz/vimcommander'
-Bundle 'renamer.vim'
-Bundle 'DirDiff.vim'
-Bundle 'DirDo.vim'
-Bundle 'greplace.vim'
-Bundle 'ViewOutput'
-Bundle 'ScreenShot'
-Bundle 'HiColors'
-Bundle 'TVO--The-Vim-Outliner'
-Bundle 'TwitVim'
+"Bundle 'renamer.vim'
+"Bundle 'DirDiff.vim'
+"Bundle 'DirDo.vim'
+"Bundle 'greplace.vim'
+"Bundle 'ViewOutput'
+"Bundle 'ScreenShot'
+"Bundle 'HiColors'
+"Bundle 'TVO--The-Vim-Outliner'
+"Bundle 'TwitVim'
 Bundle 'vimGTD'
+
+" not possible to redefine keys, install vimcommander manually 
+"Bundle 'lpenz/vimcommander'
 "}}}1
 
 " Ruby Vundles {{{1
-Bundle 'janx/vim-rubytest'
-Bundle 'tpope/vim-rails.git'
-Bundle 'ri-browser'
+"Bundle 'janx/vim-rubytest'
+"Bundle 'tpope/vim-rails.git'
+"Bundle 'ri-browser'
 Bundle 'vim-ruby/vim-ruby.git'
 " }}}1
 
@@ -78,6 +80,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'mattn/zencoding-vim'
 Bundle 'sukima/xmledit'
 Bundle 'jsbeautify'
+Bundle 'vim-coffee-script'
 " }}}1
 
 " Git Utils {{{1
@@ -86,21 +89,21 @@ Bundle 'gregsexton/gitv'
 Bundle 'Gist.vim'
 "}}}1
 
-" C/C++ Bundles {{{1
-for i in ['c.vim', 'CRefVim']
-  Bundle i
-endfor
-" }}}1
+"" C/C++ Bundles {{{1
+"for i in ['c.vim', 'CRefVim']
+  "Bundle i
+"endfor
+"" }}}1
 
 " SQL Vundles {{{1
 Bundle 'SQLUtilities'
 Bundle 'dbext.vim'
 " }}}1
 
-" games {{{1
-for name in ['sokoban.vim', 'TeTrIs.vim']
-  Bundle name
-endfor
-"}}}1
+"" games {{{1
+"for name in ['sokoban.vim', 'TeTrIs.vim']
+  "Bundle name
+"endfor
+""}}}1
 
 " vim: ft=vim
