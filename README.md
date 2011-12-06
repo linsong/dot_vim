@@ -32,6 +32,11 @@ I put all my vim config files at [Dot Vim], it includes many kinds of plugins, c
 
 Happy Vimming!
 
+## Recommandation 
+If you are a big fan of vim and want the same power when you operate your browser, just like me ;) , you should try [Pentadactyl]. 
+
+To let you start easily, I have put my [Pentadactyl] config files at [dot_pentadactyl], enjoy!
+
 ## A bit History 
 I used to add all my vim configs and plugins into one git repo at [vim_config], it works well but it have several disadvantages:
 
@@ -41,7 +46,7 @@ I used to add all my vim configs and plugins into one git repo at [vim_config], 
 
 These problems are all solved by [Vundle] in a nice way. Now to keep all plugins up to date just need running one vim command. And you can even disable some plugins in VundleFile by commentting them out to get vim start faster, and then later when you really need a disabled plugin, just run :BundleInstall PLUGIN_NAME, then it will ready, no need to restart vim. And trying some new vim plugin is super easy, just BundleInstall it. 
 
-For more details, suggest you have a look at [Vundle]. 
+For more details, suggest you have a look on [Vundle]. 
 
 Thanks [Vundle]!
 
@@ -50,3 +55,5 @@ Thanks [Vundle]!
 [xptemplate]:https://github.com/drmingdrmer/xptemplate
 [vim_config]:https://github.com/linsong/vim-config
 [Pathogen]:http://github.com/tpope/vim-pathogen/
+[Pentadactyl]:http://dactyl.sourceforge.net/pentadactyl/index
+[dot_pentadactyl]:https://github.com/linsong/dot_pentadactyl
