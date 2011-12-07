@@ -56,6 +56,7 @@ Bundle 'drmingdrmer/xptemplate.git'
 "Bundle 'TVO--The-Vim-Outliner'
 "Bundle 'TwitVim'
 Bundle 'vimGTD'
+Bundle 'tangledhelix/vim-octopress.git'
 
 " not possible to redefine keys, install vimcommander manually 
 "Bundle 'lpenz/vimcommander'

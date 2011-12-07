@@ -47,4 +47,6 @@ augroup filetypedetect
 
   autocmd BufRead,BufNewFile *.rfc* setfiletype rfc
   autocmd BufRead,BufNewFile *.penta setfiletype pentadactyl
+
+  autocmd BufNewFile,BufRead *.markdown setfiletype octopress
 augroup END
