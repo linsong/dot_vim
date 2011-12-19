@@ -1458,7 +1458,8 @@ endif " has("autocmd")
     
     "### setting for fuzzyfinder.vim {{{2
     " by default mru command and mru file modes are disabled
-    let g:fuf_modesDisable = [ 'mrufile', 'mrucmd', 'coveragefile', 'help']
+    "let g:fuf_modesDisable = [ 'mrufile', 'mrucmd', 'coveragefile', 'help']
+    let g:fuf_modesDisable = [ 'mrufile', 'mrucmd', 'help']
 
     let g:fuf_abbrevMap = 
                 \    { "^,a" : [$PROJECT_DIR, "~/workspace/auction"],
@@ -1522,10 +1523,11 @@ endif " has("autocmd")
     :noremap ,fi :FufEditDataFile<CR>
     :noremap ,fc :FufRenewCache<CR>
     :noremap ,fh :FufBufferTag<CR>
+    :noremap ,fs :FufCoverageFileChange<CR>
 
     " super find file command, will search the files recursively from current
     " directory
-    :noremap <silent> ,fs :call fuf#givenfile#launch('', 0, '[SuperFF]', split(glob("`~/tools/get_file_list.sh`"), "\n"))<CR>
+    ":noremap <silent> ,fs :call fuf#givenfile#launch('', 0, '[SuperFF]', split(glob("`~/tools/get_file_list.sh`"), "\n"))<CR>
 
     "let listener = {}
     "function! listener.onComplete(item, method)

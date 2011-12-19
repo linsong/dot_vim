@@ -10,19 +10,19 @@ Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'surround.vim'
 Bundle 'grep.vim'
-Bundle 'Mark'
 Bundle 'bsl/obviousmode'
 Bundle 'AfterColors.vim'
 Bundle 'camelcasemotion'
 Bundle 'toggle_words.vim'
 Bundle 'scratch.vim'
+Bundle 'matchit.zip'
 " }}}1
 
 " Coding {{{1
 Bundle 'scrooloose/syntastic.git'
 Bundle 'scrooloose/nerdcommenter'
 "Bundle 'scrooloose/nerdtree'
-"Bundle 'majutsushi/tagbar'
+Bundle 'majutsushi/tagbar'
 "Bundle 'AndrewRadev/linediff.vim.git'
 "Bundle 'xuhdev/SingleCompile'
 Bundle 'endwise.vim'
@@ -43,6 +43,7 @@ Bundle 'foldcol.vim'
 Bundle 'foldutil.vim'
 Bundle 'sessionman.vim'
 Bundle 'drmingdrmer/xptemplate.git'
+Bundle 'range-search.vim'
 "}}}1
 
 " Utils {{{1
@@ -64,7 +65,7 @@ Bundle 'tangledhelix/vim-octopress.git'
 
 " Ruby Vundles {{{1
 "Bundle 'janx/vim-rubytest'
-"Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-rails.git'
 "Bundle 'ri-browser'
 Bundle 'vim-ruby/vim-ruby.git'
 " }}}1
