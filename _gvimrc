@@ -79,8 +79,8 @@ set guioptions-=b
 
 set showtabline=0
 
+" following setting may cause macvim hangs after startup? 
 macmenu Edit.Find.Find\.\.\. key=<nop> " free up <Cmd-F> for fullscreen
 macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-f>
-
 set fullscreen
 

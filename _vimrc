@@ -408,6 +408,8 @@ endif
 
     nnoremap <silent> ;;  :w<CR>
     nnoremap <silent> ,,  :wa<CR>
+    "imap <silent> ;; <Esc>:w<CR>a
+    "imap <silent> ,, <Esc>:wa<CR>a
 
 "## }}}1
 
@@ -1104,10 +1106,10 @@ endif " has("autocmd")
 
     " ### use python's math module in vim {{{2
     " this method is very interesting, we can invent more usages
-    if has('python')
-        :command! -nargs=+ Calc :py print <args>
-        :py from math import *
-    endif
+    "if has('python')
+        ":command! -nargs=+ Calc :py print <args>
+        ":py from math import *
+    "endif
     " }}}2
     
     "### [NOTUSED] remap f,F to be multi-line. Supports counter before f,F. {{{2
@@ -1365,23 +1367,22 @@ endif " has("autocmd")
     let g:netrw_fastbrowse    = 2
     let g:netrw_keepdir       = 0
     let g:netrw_liststyle     = 2
-    let g:netrw_retmap        = 1
+    let g:netrw_retmap        = 0
     let g:netrw_silent        = 1
     let g:netrw_special_syntax= 1
-
     "### }}}2   
 
     "### setting for NERD_comments.vim {{{2
     "make NERD_comments silent 
     let g:NERDMenuMode=0
-    :nnoremap <silent> ,ct :call NERDComment(0, 'toggle')<CR>
-    :vnoremap <silent> ,ct :call NERDComment(1, 'toggle')<CR>
-    :nnoremap <silent> ,cn :call NERDComment(0, 'nested')<CR>
-    :vnoremap <silent> ,cn <ESC>:call NERDComment(1, 'nested')<CR>
-    :nnoremap <silent> ,cu :call NERDComment(0, 'uncomment')<CR>
-    :vnoremap <silent> ,cu <ESC>:call NERDComment(1, 'uncomment')<CR>
-    :nnoremap <silent> ,cy <ESC>:call NERDComment(0, 'yank')<CR>
-    :vnoremap <silent> ,cy <ESC>:call NERDComment(1, 'yank')<CR>
+    :nnoremap <silent> ,ct :call NERDComment('n', 'toggle')<CR>
+    :vnoremap <silent> ,ct :call NERDComment('x', 'toggle')<CR>
+    :nnoremap <silent> ,cn :call NERDComment('n', 'nested')<CR>
+    :vnoremap <silent> ,cn <ESC>:call NERDComment('x', 'nested')<CR>
+    :nnoremap <silent> ,cu :call NERDComment('n', 'uncomment')<CR>
+    :vnoremap <silent> ,cu <ESC>:call NERDComment('x', 'uncomment')<CR>
+    :nnoremap <silent> ,cy <ESC>:call NERDComment('n', 'yank')<CR>
+    :vnoremap <silent> ,cy <ESC>:call NERDComment('x', 'yank')<CR>
     "### }}}2   
 
     ""### setting for MRU.vim {{{2
@@ -1467,6 +1468,7 @@ endif " has("autocmd")
                 \      "^,v" : map(filter(split(&runtimepath, ','), 'v:val !~ "after$"'), 'v:val . ''/**/'''),
                 \      "^,r" : ["app/models", "app/views", "app/controllers", "test/functional", "test/integration", "test/unit", "test/fixtures", "db/fixtures"],
                 \      "^,u" : [$PROJECT_DIR . "/../ui_design/template/feb2010/html/02 - current/"],
+                \      "^,c" : ["~/Documents/codes"],
                 \    }
     "let g:fuf_abbrevMap = {
           "\   '^vr:' : map(filter(split(&runtimepath, ','), 'v:val !~ "after$"'), 'v:val . ''/**/'''),
@@ -1741,6 +1743,9 @@ endif " has("autocmd")
     "### settings for syntastic {{{2
     let g:syntastic_enable_signs = 1
     let g:syntastic_auto_loc_list = 0
+    let g:syntastic_mode_map = { 'mode': 'passive',
+                               \ 'active_filetypes': ['python'],
+                               \ 'passive_filetypes': ['ruby', 'puppet'] }
     "}}}2
 
     "### blogit {{{2
@@ -1790,7 +1795,6 @@ endif " has("autocmd")
 
     set runtimepath+=~/.vim/personal/
     "}}}2
-    
      
     "### reload scrit {{{2
     let g:reload_on_write = 0 "disable reload by default, use :ReloadScript manually
@@ -1798,6 +1802,10 @@ endif " has("autocmd")
     
     "### EasyMotion {{{2
     let g:EasyMotion_leader_key = ';'
+    "}}}2
+
+    "### Ack {{{2
+    let g:ackprg="ack -H --nocolor --nogroup --column"
     "}}}2
 
 "## }}}1
