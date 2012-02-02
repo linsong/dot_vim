@@ -44,6 +44,10 @@ Bundle 'foldutil.vim'
 Bundle 'sessionman.vim'
 Bundle 'drmingdrmer/xptemplate.git'
 Bundle 'range-search.vim'
+Bundle 'tpope/vim-afterimage.git'
+Bundle 'chrisbra/NrrwRgn.git'
+Bundle 'mileszs/ack.vim.git'
+Bundle 'tpope/vim-abolish.git'
 "}}}1
 
 " Utils {{{1
@@ -58,6 +62,7 @@ Bundle 'range-search.vim'
 "Bundle 'TwitVim'
 Bundle 'vimGTD'
 Bundle 'tangledhelix/vim-octopress.git'
+Bundle 'kikijump/tslime.vim.git'
 
 " not possible to redefine keys, install vimcommander manually 
 "Bundle 'lpenz/vimcommander'
@@ -73,7 +78,7 @@ Bundle 'vim-ruby/vim-ruby.git'
 " Python Vundles {{{1
 Bundle 'python.vim'
 Bundle 'fs111/pydoc.vim'
-Bundle 'kevinw/pyflakes-vim.git'
+"Bundle 'kevinw/pyflakes-vim.git' # use syntastic instead
 Bundle 'python_match.vim'
 " }}}1
 
