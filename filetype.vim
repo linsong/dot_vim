@@ -49,4 +49,6 @@ augroup filetypedetect
   autocmd BufRead,BufNewFile *.penta setfiletype pentadactyl
 
   autocmd BufNewFile,BufRead *.markdown setfiletype octopress.markdown
+
+  autocmd BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 augroup END

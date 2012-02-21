@@ -20,7 +20,7 @@ Bundle 'matchit.zip'
 
 " Coding {{{1
 Bundle 'scrooloose/syntastic.git'
-Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdcommenter' 
 "Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 "Bundle 'AndrewRadev/linediff.vim.git'
@@ -63,6 +63,7 @@ Bundle 'tpope/vim-abolish.git'
 Bundle 'vimGTD'
 Bundle 'tangledhelix/vim-octopress.git'
 Bundle 'kikijump/tslime.vim.git'
+Bundle 'kana/vim-fakeclip'
 
 " not possible to redefine keys, install vimcommander manually 
 "Bundle 'lpenz/vimcommander'
@@ -97,7 +98,7 @@ Bundle 'Gist.vim'
 "}}}1
 
 "" C/C++ Bundles {{{1
-"for i in ['c.vim', 'CRefVim']
+"for i in ['c.vim', 'CRefVim', 'OmniCppComplete']
   "Bundle i
 "endfor
 "" }}}1
