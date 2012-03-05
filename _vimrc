@@ -1825,6 +1825,10 @@ endif " has("autocmd")
     "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
     "set completeopt=menuone,menu,longest,preview
     "}}}2
+
+    "### powerline {{{2
+    "let g:Powerline_symbols = 'fancy'
+    "}}}2
 "## }}}1
 
 "## Xterm colors defination {{{1 

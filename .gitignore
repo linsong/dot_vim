@@ -41,3 +41,4 @@ sessions
 *.pyc
 *.wcd
 bundle/
+VundleFile

@@ -53,3 +53,6 @@ XSET parent|post=RubyCamelCase()
 class `name^ `parent...{{^` < `parent^`}}^
 	`cursor^
 end
+
+XPT utf8 " insert utf-8 encoding header
+# encoding: UTF-8

@@ -51,3 +51,8 @@ ipshell('***Hit Ctrl-D to exit interpreter and continue program.')
 XPT header
 #! /usr/bin/env python
 # -*- coding: utf8 -*- 
+
+XPT utf8 " insert utf-8 encoding header
+# -*- coding: utf8 -*- 
+
+

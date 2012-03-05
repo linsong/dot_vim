@@ -67,6 +67,8 @@ Bundle 'kana/vim-fakeclip'
 
 " not possible to redefine keys, install vimcommander manually 
 "Bundle 'lpenz/vimcommander'
+
+Bundle 'Lokaltog/vim-powerline.git'
 "}}}1
 
 " Ruby Vundles {{{1
@@ -98,9 +100,9 @@ Bundle 'Gist.vim'
 "}}}1
 
 "" C/C++ Bundles {{{1
-"for i in ['c.vim', 'CRefVim', 'OmniCppComplete']
-  "Bundle i
-"endfor
+for i in ['c.vim', 'CRefVim', 'OmniCppComplete' ]
+  Bundle i
+endfor
 "" }}}1
 
 " SQL Vundles {{{1
