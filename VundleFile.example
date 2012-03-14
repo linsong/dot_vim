@@ -103,6 +103,9 @@ Bundle 'Gist.vim'
 for i in ['c.vim', 'CRefVim', 'OmniCppComplete' ]
   Bundle i
 endfor
+
+" Qt 
+Bundle 'https://bitbucket.org/kh3phr3n/vim-qt-syntax.git'
 "" }}}1
 
 " SQL Vundles {{{1

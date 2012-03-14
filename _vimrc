@@ -1793,6 +1793,12 @@ endif " has("autocmd")
 
     let g:xptemplate_pum_tab_nav = 1
 
+		let g:xptemplate_goback = '<C-g>'
+
+		let g:xptemplate_strict = 1
+
+    let g:xptemplate_bundle = "cpp_*" 
+
     set runtimepath+=~/.vim/personal/
     "}}}2
      
