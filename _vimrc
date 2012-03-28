@@ -1837,20 +1837,20 @@ endif " has("autocmd")
     "}}}2
     
     "### ctrlp {{{2
+    let g:ctrlp_map = '<c-u>'
     let g:ctrlp_working_path_mode = 0
     let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-      \ 'file': '\.exe$\|\.so$\|\.dll$|\.pyc$|\.swp$|\.swc$|\.swf$|tags$',
-      \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+      \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\.swp$\|\.swc$\|\.swf$\|tags$',
       \ }
-    let g:ctrlp_user_command = {
-      \ 'types': {
-        \ 1: ['.git/', 'cd %s && git ls-files'],
-        \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
-        \ },
-      \ 'fallback': 'find %s -type f'
-      \ }
-    let g:ctrlp_extensions = ['dir', 'tag', 'rtscript', 'changes']
+    "let g:ctrlp_user_command = {
+      "\ 'types': {
+        "\ 1: ['.git/', 'cd %s && git ls-files'],
+        "\ 2: ['.hg/', 'hg --cwd %s locate -I .'],
+        "\ },
+      "\ 'fallback': 'find %s -type f'
+      "\ }
+    let g:ctrlp_extensions = ['dir'] " ['dir', 'tag', 'rtscript', 'changes']
     "}}}2
 "## }}}1
 
