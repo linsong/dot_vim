@@ -48,6 +48,7 @@ Bundle 'tpope/vim-afterimage.git'
 Bundle 'chrisbra/NrrwRgn.git'
 Bundle 'mileszs/ack.vim.git'
 Bundle 'tpope/vim-abolish.git'
+Bundle 'kien/ctrlp.vim.git'
 "}}}1
 
 " Utils {{{1
@@ -64,6 +65,7 @@ Bundle 'vimGTD'
 Bundle 'tangledhelix/vim-octopress.git'
 Bundle 'kikijump/tslime.vim.git'
 Bundle 'kana/vim-fakeclip'
+Bundle 'a.vim'
 
 " not possible to redefine keys, install vimcommander manually 
 "Bundle 'lpenz/vimcommander'
@@ -100,11 +102,12 @@ Bundle 'Gist.vim'
 "}}}1
 
 "" C/C++ Bundles {{{1
-for i in ['c.vim', 'CRefVim', 'OmniCppComplete' ]
+"for i in ['c.vim', 'CRefVim', 'OmniCppComplete', 'derekwyatt/vim-protodef', 'FSwitch']
+for i in ['OmniCppComplete', 'derekwyatt/vim-protodef', 'FSwitch']
   Bundle i
 endfor
 
-" Qt 
+" Qt
 Bundle 'https://bitbucket.org/kh3phr3n/vim-qt-syntax.git'
 "" }}}1
 

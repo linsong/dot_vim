@@ -132,7 +132,7 @@ endif
 :set nobackup writebackup
 
 " set tags 
-:set tags+=../tags,../../tags,ftags
+:set tags+=../tags,../../tags,ftags,../*.tags
 
 :set number
 
@@ -1822,7 +1822,7 @@ endif " has("autocmd")
     let OmniCpp_NamespaceSearch = 1
     let OmniCpp_GlobalScopeSearch = 1
     let OmniCpp_ShowAccess = 1
-    let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+    "let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
     let OmniCpp_MayCompleteDot = 1 " autocomplete after .
     let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
     let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
@@ -1834,6 +1834,23 @@ endif " has("autocmd")
 
     "### powerline {{{2
     "let g:Powerline_symbols = 'fancy'
+    "}}}2
+    
+    "### ctrlp {{{2
+    let g:ctrlp_working_path_mode = 0
+    let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+      \ 'file': '\.exe$\|\.so$\|\.dll$|\.pyc$|\.swp$|\.swc$|\.swf$|tags$',
+      \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+      \ }
+    let g:ctrlp_user_command = {
+      \ 'types': {
+        \ 1: ['.git/', 'cd %s && git ls-files'],
+        \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
+        \ },
+      \ 'fallback': 'find %s -type f'
+      \ }
+    let g:ctrlp_extensions = ['dir', 'tag', 'rtscript', 'changes']
     "}}}2
 "## }}}1
 
