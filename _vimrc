@@ -1620,33 +1620,23 @@ endif " has("autocmd")
     nmap <Plug>IgnoreMarkSearchNext <Plug>MarkSearchNext 
     nmap <Plug>IgnoreMarkSearchPrev <Plug>MarkSearchPrev
 
-    highlight def MarkWord7   ctermfg=Cyan      ctermbg=Black  guifg=#8CCBEA    guibg=Black
-    highlight def MarkWord8   ctermfg=Green     ctermbg=Black  guifg=#A4E57E    guibg=Black
-    highlight def MarkWord9   ctermfg=Yellow    ctermbg=Black  guifg=#FFDB72    guibg=Black
-    highlight def MarkWord10  ctermfg=Red       ctermbg=Black  guifg=#FF7272    guibg=Black
-    highlight def MarkWord11  ctermfg=Magenta   ctermbg=Black  guifg=#FFB3FF    guibg=Black
-    highlight def MarkWord12  ctermfg=Blue      ctermbg=Black  guifg=#9999FF    guibg=Black
+    "highlight def MarkWord7   ctermfg=Cyan      ctermbg=Black  guifg=#8CCBEA    guibg=Black
+    "highlight def MarkWord8   ctermfg=Green     ctermbg=Black  guifg=#A4E57E    guibg=Black
+    "highlight def MarkWord9   ctermfg=Yellow    ctermbg=Black  guifg=#FFDB72    guibg=Black
+    "highlight def MarkWord10  ctermfg=Red       ctermbg=Black  guifg=#FF7272    guibg=Black
+    "highlight def MarkWord11  ctermfg=Magenta   ctermbg=Black  guifg=#FFB3FF    guibg=Black
+    "highlight def MarkWord12  ctermfg=Blue      ctermbg=Black  guifg=#9999FF    guibg=Black
 
-    highlight def MarkWord13  ctermbg=Cyan      ctermfg=White  guibg=#8CCBEA    guifg=White
-    highlight def MarkWord14  ctermbg=Green     ctermfg=White  guibg=#A4E57E    guifg=White
-    highlight def MarkWord15  ctermbg=Yellow    ctermfg=White  guibg=#FFDB72    guifg=White
-    highlight def MarkWord16  ctermbg=Red       ctermfg=White  guibg=#FF7272    guifg=White
-    highlight def MarkWord17  ctermbg=Magenta   ctermfg=White  guibg=#FFB3FF    guifg=White
-    highlight def MarkWord18  ctermbg=Blue      ctermfg=White  guibg=#9999FF    guifg=White
+    "highlight def MarkWord13  ctermbg=Cyan      ctermfg=White  guibg=#8CCBEA    guifg=White
+    "highlight def MarkWord14  ctermbg=Green     ctermfg=White  guibg=#A4E57E    guifg=White
+    "highlight def MarkWord15  ctermbg=Yellow    ctermfg=White  guibg=#FFDB72    guifg=White
+    "highlight def MarkWord16  ctermbg=Red       ctermfg=White  guibg=#FF7272    guifg=White
+    "highlight def MarkWord17  ctermbg=Magenta   ctermfg=White  guibg=#FFB3FF    guifg=White
+    "highlight def MarkWord18  ctermbg=Blue      ctermfg=White  guibg=#9999FF    guifg=White
 
-    "if &t_Co>=256 || has("gui_running")
-        "let loop_count = 0
-        "let bg_colors = ["red","yellow","blue","green","magenta","cyan","gray","brown"]
-        "let fg_colors = ["white","black","white","black","white","black","black","white"]
-        "while loop_count < 30
-            "bgColor = bg_colors[loop_count]
-            "fgColor = fg_colors[loop_count]
-            "execute 'highlight def MarkWord' . loop_count
-               "\ . ' ctermbg=' . bgColor . ' guibg=' . bgColor
-               "\ . ' ctermfg=' . fgColor . ' guifg=' . fgColor
-            "let loop_count = loop_count + 1
-        "endwhile
-    "endif
+    if &t_Co>=256 || has("gui_running")
+      let g:mwDefaultHighlightingPalette = 'extended'
+    endif
     "}}}2
     
     "### settings for RltvNmbr.vim {{{2
@@ -1840,8 +1830,8 @@ endif " has("autocmd")
     let g:ctrlp_map = '<c-u>'
     let g:ctrlp_working_path_mode = 0
     let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-      \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\.swp$\|\.swc$\|\.swf$\|tags$',
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.cache$\|build$',
+      \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\.swp$\|\.swc$\|\.swf$\|tags$\|\.DS_Store$\|\.log$\|\.png$\|\.jpg$\|\.bmp$',
       \ }
     "let g:ctrlp_user_command = {
       "\ 'types': {
