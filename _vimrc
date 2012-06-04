@@ -411,6 +411,9 @@ endif
     "imap <silent> ;; <Esc>:w<CR>a
     "imap <silent> ,, <Esc>:wa<CR>a
 
+    nnoremap <silent> <f5> :make<CR>
+    imap <silent> <f5> <Esc>:w<CR>:make<CR>i
+
 "## }}}1
 
 "## Mappings for vim keycodes {{{1 
@@ -1831,7 +1834,7 @@ endif " has("autocmd")
     let g:ctrlp_working_path_mode = 0
     let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.cache$\|build$',
-      \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\.swp$\|\.swc$\|\.swf$\|tags$\|\.DS_Store$\|\.log$\|\.png$\|\.jpg$\|\.bmp$',
+      \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\.swp$\|\.swc$\|\.swf$\|tags$\|\.DS_Store$\|\.log$\|\.png$\|\.jpg$\|\.bmp$\|\.o$\|\.obj$\|moc_.*$',
       \ }
     "let g:ctrlp_user_command = {
       "\ 'types': {
