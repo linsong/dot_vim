@@ -1,5 +1,5 @@
 " Linsong's vimrc comes from official vimrc example
-" vim: foldmethod=marker
+" vim: foldmethod=marker expandtab ts=2 sw=2
 "
 " Maintainer:   Linsong  linsong dot qizi at gmail dot com
 " Last change:  Fri Dec  9 17:58:24 CST 2005
@@ -177,21 +177,21 @@ endif
 "## General Mapping {{{1
 
     " Use Q for formatting the current paragraph (or selection)
-    vmap Q gq
-    nmap Q gqap
+    xmap Q gq
+    xmap Q gqap
 
     " This is an alternative that also works in block mode, but the deleted
     " text is lost and it only works for putting the current register.
-    vnoremap p "_dp
-    vnoremap P "_dP
+    xnoremap p "_dp
+    xnoremap P "_dP
 
     " when leave insert mode by pressing <ESC>, turn off 
     " the input method, but for now it does not work for SCIM :(
     :inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
     " remap builtin shift command
-    :vnoremap < <gv
-    :vnoremap > >gv 
+    :xnoremap < <gv
+    :xnoremap > >gv 
 
     " general key maps 
     "### got following tip from http://www.vim.org/tips/tip.php?tip_id=1
@@ -209,8 +209,8 @@ endif
     " This works well even with <Tab> (no need to change ^I into \t),
     " but not with a linebreak, which must be changed from ^M to \n.
     " This is done with the substitute() function.
-    vnoremap * y/\V<C-R>=substitute(escape(@@,"/\\"),"\n","\\\\n","ge")<CR><CR>
-    vnoremap # y?\V<C-R>=substitute(escape(@@,"?\\"),"\n","\\\\n","ge")<CR><CR>
+    xnoremap * y/\V<C-R>=substitute(escape(@@,"/\\"),"\n","\\\\n","ge")<CR><CR>
+    xnoremap # y?\V<C-R>=substitute(escape(@@,"?\\"),"\n","\\\\n","ge")<CR><CR>
 
     " setting about specific plugins
     " a vim script that can preview a function or variables
@@ -325,7 +325,7 @@ endif
     nmap <C-W>E :vnew \| vimshell bash<CR>
 
     " it can copy texts to last edited place continuously
-    :vmap gy y:call CopyToLastEditPos()<CR>
+    :xmap gy y:call CopyToLastEditPos()<CR>
     :nmap gy yy:call CopyToLastEditPos()<CR>
 
     function! CopyToLastEditPos()
@@ -758,6 +758,9 @@ endif
       :set cpo-=<
       :set wcm=<C-Z>
       :map <M-e> :emenu <C-Z>
+
+      " don't clear vim text in terminal when exit
+      :set t_ti= t_te=
     endif 
     "### }}}2
 "## }}}1
@@ -1692,7 +1695,8 @@ endif " has("autocmd")
 
     "### settings for vimwiki {{{2
     let g:vimwiki_menu = "Plugin.Vimwiki"
-    let g:vimwiki_list = [{'path': '~/workspace/auction/client/notes/', 'path_html': '~/workspace/auction/client/notes/html'}, {}]
+    let g:vimwiki_list = [{'path': '~/vimwiki', 'path_html': '~/vimwiki_html'},
+          \ {'path': '~/workspace/auction/client/notes/', 'path_html': '~/workspace/auction/client/notes/html'}]
     "}}}2
 
     "### settings for autotag {{{2
@@ -1773,7 +1777,12 @@ endif " has("autocmd")
     let g:xptemplate_fallback = '<Plug>supertabKey'
 
     ""xpt uses <Tab> as trigger key
-    let g:xptemplate_key = '<Tab>'
+    "let g:xptemplate_key = '<Tab>'
+
+    " trigger snippet with <Tab> no matter popup menu opened or not
+    let g:xptemplate_key = '<Plug>triggerxpt'
+    inoremap <Plug>closePUM <C-v><C-v><BS>
+    imap <TAB> <Plug>closePUM<Plug>triggerxpt
 
     let g:xptemplate_move_even_with_pum = 0
     let g:xptemplate_always_show_pum = 1
@@ -1786,9 +1795,9 @@ endif " has("autocmd")
 
     let g:xptemplate_pum_tab_nav = 1
 
-		let g:xptemplate_goback = '<C-g>'
+    let g:xptemplate_goback = '<C-g>'
 
-		let g:xptemplate_strict = 1
+    let g:xptemplate_strict = 1
 
     let g:xptemplate_bundle = "cpp_*" 
 
