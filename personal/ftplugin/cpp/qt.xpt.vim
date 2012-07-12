@@ -14,4 +14,8 @@ XPT QAction " create new QAction instance
 QAction(`icon^, `tr...{{^tr("`cursor^")`}}^, `this^);
 `cursor^
 
+XPT tr " create a tr string
+tr("`^")`^
 
+XPT #include " include a header 
+#include <`QtGui^/`cursor^>
