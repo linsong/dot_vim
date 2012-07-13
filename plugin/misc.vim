@@ -103,3 +103,16 @@ function! PsqlExplainFoldLevel(line)
         return (l:spaceCounter-3)/6
     endif
 endfunction
+
+" try to find filename within paths, then invoke system default browser to
+" open the local file URL
+function! FindAndOpenHtmlFile(filename, paths)
+  for path in a:paths
+    let l:filepath = path . a:filename
+    if filereadable(l:filepath)
+      let l:url = "file://" . l:filepath
+      execute "!open " . l:url
+      return
+    endif
+  endfor
+endfunction
