@@ -27,6 +27,12 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+source ~/.vim/VundleFile
+
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
@@ -1230,10 +1236,6 @@ endif " has("autocmd")
 
     "## Plugin related settings {{{1
     
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-    source ~/.vim/VundleFile
-
     "### setting for winmanager.vim {{{2
         ":let g:winManagerWindowLayout = "FileExplorer,TagsExplorer|BufExplorer"
         :let g:winManagerWindowLayout = "FileExplorer"
