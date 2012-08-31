@@ -1512,18 +1512,18 @@ endif " has("autocmd")
     let g:fuf_keyOpenVsplit = '<C-V>'
 
     :noremap ,ff :FufFileWithCurrentBufferDir<CR>
-    :noremap ,fb :FufBuffer<CR>
-    :noremap ,fm :FufMruFile<CR>
+    ":noremap ,fb :FufBuffer<CR>
+    ":noremap ,fm :FufMruFile<CR>
     :noremap ,f; :FufMruCmd<CR>
     :noremap ,fk :FufBookmarkFile<CR>
     :noremap ,fa :FufBookmarkFileAdd<CR>
-    :noremap ,fr :FufBookmarkDir<CR>
-    :noremap ,fe :FufBookmarkDirAdd<CR>
+    ":noremap ,fr :FufBookmarkDir<CR>
+    ":noremap ,fe :FufBookmarkDirAdd<CR>
     :noremap ,fd :FufDir<CR>
-    :noremap ,ft :FufTaggedFile<CR>
-    :noremap ,fg :FufTag<CR>
+    ":noremap ,ft :FufTaggedFile<CR>
+    ":noremap ,fg :FufTag<CR>
     :noremap ,f] :FufTag! <C-r>=expand('<cword>')<CR><CR>
-    :noremap ,fl :FufLine<CR>
+    ":noremap ,fl :FufLine<CR>
     :noremap ,fq :FufQuickfix<CR>
     :noremap ,fp :FufChangeList<CR>
     :noremap ,fj :FufJumpList<CR>
@@ -1769,19 +1769,19 @@ endif " has("autocmd")
     "}}}2
 
     "### xptemplate {{{2
-    "avoid key conflict
-    let g:SuperTabMappingForward = '<Plug>supertabKey'
+    ""avoid key conflict
+    "let g:SuperTabMappingForward = '<Plug>supertabKey'
 
-    "if nothing matched in xpt, try supertab
-    let g:xptemplate_fallback = '<Plug>supertabKey'
+    ""if nothing matched in xpt, try supertab
+    "let g:xptemplate_fallback = '<Plug>supertabKey'
 
-    ""xpt uses <Tab> as trigger key
+    """xpt uses <Tab> as trigger key
     "let g:xptemplate_key = '<Tab>'
 
-    " trigger snippet with <Tab> no matter popup menu opened or not
-    let g:xptemplate_key = '<Plug>triggerxpt'
-    inoremap <Plug>closePUM <C-v><C-v><BS>
-    imap <TAB> <Plug>closePUM<Plug>triggerxpt
+    "" trigger snippet with <Tab> no matter popup menu opened or not
+    "let g:xptemplate_key = '<Plug>triggerxpt'
+    "inoremap <Plug>closePUM <C-v><C-v><BS>
+    "imap <TAB> <Plug>closePUM<Plug>triggerxpt
 
     let g:xptemplate_move_even_with_pum = 0
     let g:xptemplate_always_show_pum = 1
@@ -1839,11 +1839,20 @@ endif " has("autocmd")
     
     "### ctrlp {{{2
     let g:ctrlp_map = '<c-u>'
+    noremap ,fb :CtrlPBuffer<CR>
+    noremap ,fm :CtrlPMRU<CR>
+    noremap ,ft :CtrlPBufTag<CR>
+    noremap ,fg :CtrlPBufTagAll<CR>
+    noremap ,fl :CtrlPLine<CR>
+    noremap ,fr :CtrlPBookmarkDir<CR>
+    noremap ,fe :CtrlPBookmarkDirAdd<CR>
+
     let g:ctrlp_cmd = 'CtrlPMixed'
     let g:ctrlp_working_path_mode = 0
+
     let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.cache$\|build$',
-      \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\.swp$\|\.swc$\|\.swf$\|tags$\|\.DS_Store$\|\.log$\|\.png$\|\.jpg$\|\.bmp$\|\.o$\|\.obj$\|moc_.*$',
+      \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\.swp$\|\.swc$\|\.swf$\|\.swo$\|tags$\|\.DS_Store$\|\.log$\|\.png$\|\.jpg$\|\.bmp$\|\.o$\|\.obj$\|moc_.*$',
       \ }
     "let g:ctrlp_user_command = {
       "\ 'types': {
@@ -1852,8 +1861,9 @@ endif " has("autocmd")
         "\ },
       "\ 'fallback': 'find %s -type f'
       "\ }
-    let g:ctrlp_extensions = ['dir'] " ['dir', 'tag', 'rtscript', 'changes']
+    let g:ctrlp_extensions = ['buffertag', 'dir', 'bookmarkdir'] " ['dir', 'tag', 'rtscript', 'changes']
     "}}}2
+
 "## }}}1
 
 "## Xterm colors defination {{{1 

@@ -19,3 +19,105 @@ tr("`^")`^
 
 XPT #include " include a header 
 #include <`QtGui^/`cursor^>
+
+XPT test_file_skeleton "create a unit test file skeleton
+#include "auto_test.h"
+
+class `clsname^ : public QObject
+{
+    Q_OBJECT
+private slots:
+    void `test_method_name^();
+};
+
+DECLARE_TEST(`clsname^)
+
+..XPT
+
+XPT qlog " add info log 
+XSET level=Choose(['INFO', 'WARN', 'ERROR', 'FATAL', 'DEBUG', 'TRACE'])
+QLOG_`level^() << "`log^" `more...^<< `log2^ `more...^;
+`cursor^
+..XPT
+
+XPT QVERIFY " qt unit test assertion 
+QVERIFY(`real^ == `expected^);
+`cursor^
+..XPT
+
+XPT qclass " create qt base class 
+class `classname^ : public QObject 
+{
+    Q_OBJECT
+public: 
+    explicit `classname^(QObject * parent);
+    ~`classname^();
+
+signals:
+
+private slots: 
+
+private:
+  `cursor^
+};
+
+..XPT
+
+" include shortcuts
+XPT istring 
+#include <QtCore/QString>`cursor^
+..XPT 
+
+XPT istringlist 
+#include <QtCore/QStringList>`cursor^
+..XPT 
+
+XPT ilist 
+#include <QtCore/QList>`cursor^
+..XPT
+
+XPT ihash
+#include <QtCore/QHash>`cursor^
+..XPT
+
+XPT ilog 
+#include "gui/reporter.h"`cursor^
+..XPT
+
+XPT idebug 
+#include <qDebug>`cursor^
+..XPT
+
+XPT ibytearray 
+#include <QtCore/QByteArray>`cursor^
+..XPT
+
+XPT ifile 
+#include <QtCore/QFile>`cursor^
+..XPT
+
+XPT idir
+#include <QtCore/QDir>`cursor^
+..XPT
+
+XPT iglobal
+#include "globals.h"`cursor^
+..XPT
+
+XPT icore
+#include <QtCore/Q`String^>`cursor^
+..XPT
+
+XPT igui 
+#include <QtGui/Q`Dialog^> `cursor^
+..XPT
+
+XPT sectionheader " section header
+////////////////////////////////////////////////////////////////
+// `cursor^
+////////////////////////////////////////////////////////////////
+
+..XPT
+
+XPT sh alias=sectionheader
+
