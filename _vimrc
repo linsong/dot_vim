@@ -1314,6 +1314,9 @@ endif " has("autocmd")
 
     "### setting for a.vim {{{2
     let g:alternateNoDefaultAlternate = 1
+    map ;aa :A<CR>
+    map ;as :AS<CR>
+    map ;av :AV<CR>
     "### }}}2
 
     "### setting for python editing {{{2
@@ -1740,7 +1743,7 @@ endif " has("autocmd")
     let g:syntastic_enable_signs = 1
     let g:syntastic_auto_loc_list = 0
     let g:syntastic_mode_map = { 'mode': 'passive',
-                               \ 'active_filetypes': ['python'],
+                               \ 'active_filetypes': ['python', 'cpp'],
                                \ 'passive_filetypes': ['ruby', 'puppet'] }
     "}}}2
 
@@ -1864,6 +1867,10 @@ endif " has("autocmd")
     let g:ctrlp_extensions = ['buffertag', 'dir', 'bookmarkdir'] " ['dir', 'tag', 'rtscript', 'changes']
     "}}}2
 
+    "### rainbow {{{2
+		let g:rainbow_active = 0
+    map ;r :silent! RainbowToggle <CR>
+    "}}}2
 "## }}}1
 
 "## Xterm colors defination {{{1 
