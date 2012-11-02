@@ -29,6 +29,10 @@ Bundle 'endwise.vim'
 "Bundle 'Bexec'
 " }}}1
 
+" ColorSchemes {{{1
+Bundle 'altercation/vim-colors-solarized.git'
+" }}}1
+
 " Advanced Editing {{{1
 Bundle 'AutoComplPop'
 Bundle 'vimwiki'
@@ -64,13 +68,17 @@ Bundle 'kien/ctrlp.vim.git'
 Bundle 'vimGTD'
 Bundle 'tangledhelix/vim-octopress.git'
 Bundle 'kikijump/tslime.vim.git'
+Bundle 'epeli/slimux.git'
 Bundle 'kana/vim-fakeclip'
 Bundle 'a.vim'
+"Bundle 'quickrun.vim'
 
 " not possible to redefine keys, install vimcommander manually 
 "Bundle 'lpenz/vimcommander'
 
 Bundle 'Lokaltog/vim-powerline.git'
+"Bundle 'HyperList.vim'
+Bundle 'localvimrc'
 "}}}1
 
 " Ruby Vundles {{{1

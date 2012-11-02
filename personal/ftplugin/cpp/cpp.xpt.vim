@@ -14,4 +14,10 @@ if (`pointer^ != NULL) {
 `cursor^
 ..XPT
 
-
+XPT templatefunc "define template function
+template <typename T>
+`rettype^ `funcname^(`T^)
+{
+    `cursor^
+}
+..XPT

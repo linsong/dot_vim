@@ -1511,8 +1511,8 @@ endif " has("autocmd")
 
     let g:fuf_keyOpenTabpage = '<C-t>'
     let g:fuf_keyOpen = '<CR>'
-    let g:fuf_keyOpenSplit = '<C-l>'
-    let g:fuf_keyOpenVsplit = '<C-V>'
+    let g:fuf_keyOpenSplit = '<C-x>'
+    let g:fuf_keyOpenVsplit = '<C-v>'
 
     :noremap ,ff :FufFileWithCurrentBufferDir<CR>
     ":noremap ,fb :FufBuffer<CR>
@@ -1850,11 +1850,11 @@ endif " has("autocmd")
     noremap ,fr :CtrlPBookmarkDir<CR>
     noremap ,fe :CtrlPBookmarkDirAdd<CR>
 
-    let g:ctrlp_cmd = 'CtrlPMixed'
+    let g:ctrlp_cmd = 'CtrlP'
     let g:ctrlp_working_path_mode = 0
 
     let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.cache$\|build$',
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.cache$\|build$\|\.moc$\|\.obj$',
       \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\.swp$\|\.swc$\|\.swf$\|\.swo$\|tags$\|\.DS_Store$\|\.log$\|\.png$\|\.jpg$\|\.bmp$\|\.o$\|\.obj$\|moc_.*$',
       \ }
     "let g:ctrlp_user_command = {
@@ -1871,6 +1871,13 @@ endif " has("autocmd")
 		let g:rainbow_active = 0
     map ;r :silent! RainbowToggle <CR>
     "}}}2
+    
+    "### localvimrc {{{2
+    let g:localvimrc_persistent = 1
+    let g:localvimrc_whitelist = '' . $HOME . '/workspace/.*'
+    let g:localvimrc_sandbox = 0
+    "}}}2
+
 "## }}}1
 
 "## Xterm colors defination {{{1 

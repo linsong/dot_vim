@@ -51,4 +51,6 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.markdown setfiletype octopress.markdown
 
   autocmd BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
+
+  au BufNewFile,BufRead *.sedona setf sedona
 augroup END
