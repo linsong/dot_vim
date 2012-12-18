@@ -100,6 +100,14 @@ XPT idir
 #include <QtCore/QDir>`cursor^
 ..XPT
 
+XPT iset
+#include <QtCore/QSet>`cursor^
+..XPT
+
+XPT isettings
+#include <QtCore/QSettings>`cursor^
+..XPT
+
 XPT iglobal
 #include "globals.h"`cursor^
 ..XPT
