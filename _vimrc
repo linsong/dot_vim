@@ -27,6 +27,14 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+" set up neovundle 
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+source ~/.vim/VundleFile
+" end 
+
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
@@ -1229,10 +1237,12 @@ endif " has("autocmd")
 "## }}}1
 
     "## Plugin related settings {{{1
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-    source ~/.vim/VundleFile
-    
+    NeoBundleCheck
+
+    "set rtp+=~/.vim/bundle/vundle/
+    "call vundle#rc()
+    "source ~/.vim/VundleFile
+
     "### setting for winmanager.vim {{{2
         ":let g:winManagerWindowLayout = "FileExplorer,TagsExplorer|BufExplorer"
         :let g:winManagerWindowLayout = "FileExplorer"
@@ -1682,10 +1692,10 @@ endif " has("autocmd")
     "}}}2
     
     "### settings for crefvim {{{2
-    vmap <silent> <unique> ,cr <Plug>CRV_CRefVimVisual
-    nmap <silent> <unique> ,cr <Plug>CRV_CRefVimNormal
-    map <silent> <unique> ,cw <Plug>CRV_CRefVimAsk
-    map <silent> <unique> ,cc <Plug>CRV_CRefVimInvoke
+    vnoremap <silent> <unique> ,cr <Plug>CRV_CRefVimVisual
+    nnoremap <silent> <unique> ,cr <Plug>CRV_CRefVimNormal
+    nnoremap <silent> <unique> ,cw <Plug>CRV_CRefVimAsk
+    nnoremap <silent> <unique> ,cc <Plug>CRV_CRefVimInvoke
     "}}}2
 
     "### settings for c.vim {{{2
@@ -1877,6 +1887,7 @@ endif " has("autocmd")
     "### rainbow {{{2
 		let g:rainbow_active = 0
     map ;r :silent! RainbowToggle <CR>
+    "map ;r :silent! RainbowParenthesesToggle <CR>
     "}}}2
     
     "### localvimrc {{{2
@@ -2182,3 +2193,7 @@ if filereadable(expand('~/.vimrc.local'))
     source ~/.vimrc.local
 endif
 
+if !has('vim_starting')
+  " Call on_source hook when reloading .vimrc.
+  call neobundle#call_hook('on_source')
+endif
