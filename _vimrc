@@ -1307,10 +1307,16 @@ endif " has("autocmd")
     let Grep_Skip_Files = join(Grep_Skip_Files_List, ' ')
     let Grep_Default_Filelist_List = ['*']
     let Grep_Default_Filelist = join(Grep_Default_Filelist_List, ' ')
-    map ,gr :Rgrep<CR>
-    map ,gg :Grep<CR>
-    map ,gf :Fgrep<CR>
+    "map ,gr :Rgrep<CR>
+    "map ,gg :Grep<CR>
+    "map ,gf :Fgrep<CR>
     "### }}}2
+    
+    "### settings for ag.vim {{{2
+    let g:agprg="ag -H --nocolor --nogroup --column --smart-case "
+    map ,gr yiw:Ag "<CR>
+    vmap ,gr y:Ag "<CR>
+    "}}}2
 
     "### setting for a.vim {{{2
     let g:alternateNoDefaultAlternate = 1
@@ -1852,6 +1858,7 @@ endif " has("autocmd")
 
     let g:ctrlp_cmd = 'CtrlP'
     let g:ctrlp_working_path_mode = 0
+    let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 
     let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.cache$\|build$\|\.moc$\|\.obj$',
@@ -1876,6 +1883,14 @@ endif " has("autocmd")
     let g:localvimrc_persistent = 1
     let g:localvimrc_whitelist = '' . $HOME . '/workspace/.*'
     let g:localvimrc_sandbox = 0
+    "}}}2
+    
+    "### vim-PinyinSearch {{{2
+    let g:PinyinSearch_Dict = '' . $HOME . '/.vim/bundle/vim-PinyinSearch/PinyinSearch.dict'
+    "}}}2
+
+    "### vim-seek {{{2
+    "let g:seek_enable_jumps = 1 
     "}}}2
 
 "## }}}1

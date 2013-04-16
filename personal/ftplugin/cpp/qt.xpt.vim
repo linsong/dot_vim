@@ -108,6 +108,10 @@ XPT isettings
 #include <QtCore/QSettings>`cursor^
 ..XPT
 
+XPT idir
+#include <QtCore/QDir>`cursor^
+..XPT
+
 XPT iglobal
 #include "globals.h"`cursor^
 ..XPT
