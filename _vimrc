@@ -380,8 +380,8 @@ endif
     :map <silent> ,9 :tabnext 9<CR>
     :map <silent> ,0 :tabnext 10<CR>
 
-    :nnoremap <silent> <C-n> :tabnext<CR>
-    :nnoremap <silent> <C-p> :tabprevious<CR>
+    ":nnoremap <silent> <M-C-n> :tabnext<CR>
+    ":nnoremap <silent> <M-C-p> :tabprevious<CR>
 
     " tip from http://vim.wikia.com/wiki/Creating_new_text_objects
     :vnoremap af :<C-U>silent! normal! [zV]z<CR>
@@ -1323,7 +1323,7 @@ endif " has("autocmd")
     "### }}}2
     
     "### settings for ag.vim {{{2
-    let g:agprg="ag -H --nocolor --nogroup --column --smart-case "
+    let g:agprg="ag --nocolor --nogroup --column --smart-case "
     map ,gr yiw:Ag "<CR>
     vmap ,gr y:Ag "<CR>
     "}}}2
@@ -1857,7 +1857,7 @@ endif " has("autocmd")
     "}}}2
     
     "### ctrlp {{{2
-    let g:ctrlp_map = '<c-u>'
+    let g:ctrlp_map = '<c-p>'
     noremap ,fb :CtrlPBuffer<CR>
     noremap ,fm :CtrlPMRU<CR>
     noremap ,ft :CtrlPBufTag<CR>
@@ -1903,6 +1903,63 @@ endif " has("autocmd")
     "### vim-seek {{{2
     "let g:seek_enable_jumps = 1 
     "}}}2
+    
+    "### unite {{{2
+    nnoremap    [unite]   <Nop>
+    nmap    m [unite]
+
+    nnoremap <silent> [unite]c  :<C-u>UniteWithCurrentDir
+          \ -buffer-name=files buffer file_mru bookmark file<CR>
+    nnoremap <silent> [unite]b  :<C-u>UniteWithBufferDir
+          \ -buffer-name=files -prompt=%\  buffer file_mru bookmark file<CR>
+    nnoremap <silent> [unite]r  :<C-u>Unite
+          \ -buffer-name=register register<CR>
+    nnoremap <silent> [unite]o  :<C-u>Unite line<CR>
+    nnoremap <silent> [unite]d
+          \ :<C-u>Unite -buffer-name=files -default-action=lcd directory_mru<CR>
+    nnoremap <silent> [unite]ma
+          \ :<C-u>Unite mapping<CR>
+    nnoremap <silent> [unite]me
+          \ :<C-u>Unite output:message<CR>
+    nnoremap  [unite]f  :<C-u>Unite source<CR>
+    nnoremap <silent> [unite]s
+          \ :<C-u>Unite -buffer-name=files -no-split
+          \ jump_point file_point buffer_tab
+          \ file_rec:! file file/new file_mru<CR>
+    " Start insert.
+    let g:unite_enable_start_insert = 1
+    let g:unite_enable_short_source_names = 0
+
+    if executable('ag')
+      " Use ag in unite grep source.
+      let g:unite_source_grep_command = 'ag'
+      let g:unite_source_grep_default_opts = '--nocolor --nogroup --column'
+      let g:unite_source_grep_recursive_opt = ''
+    elseif executable('ack-grep')
+      " Use ack in unite grep source.
+      let g:unite_source_grep_command = 'ack-grep'
+      let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
+      let g:unite_source_grep_recursive_opt = ''
+    endif
+    "}}}2
+    
+    "### vimfiler {{{2 
+		let g:vimfiler_quick_look_command = 'qlmanage -p'
+	  let g:vimfiler_as_default_explorer = 1
+
+    NeoBundleLazy 'Shougo/vimfiler', {
+          \ 'depends' : 'Shougo/unite.vim',
+          \ 'autoload' : {
+          \    'commands' : [{ 'name' : 'VimFiler',
+          \                    'complete' : 'customlist,vimfiler#complete' },
+          \                  'VimFilerExplorer',
+          \                  'Edit', 'Read', 'Source', 'Write'],
+          \    'mappings' : ['<Plug>(vimfiler_switch)'],
+          \    'explorer' : 1,
+          \ }
+          \ }
+    "}}}2
+
 
 "## }}}1
 

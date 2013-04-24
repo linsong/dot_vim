@@ -1,0 +1,173 @@
+" let Vundle manage Vundle
+" required vundles 
+"NeoBundle 'gmarik/vundle'
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Basic Editing {{{1
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'bsl/obviousmode'
+NeoBundle 'surround.vim'
+NeoBundle 'AfterColors.vim'
+NeoBundle 'camelcasemotion'
+NeoBundle 'matchit.zip'
+NeoBundleLazy 'scratch.vim', {'autoload': {'commands': 'Scratch'}}
+NeoBundleLazy 'toggle_words.vim', {'autoload': {'commands': 'ToggleWord'}}
+NeoBundleLazy 'L9'
+NeoBundleLazy 'FuzzyFinder', {'autoload': {'commands': ['FufFileWithCurrentBufferDir',]}}
+NeoBundleLazy 'grep.vim'
+NeoBundleLazy 'goldfeld/vim-seek'
+" }}}1
+
+" Coding {{{1
+NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'scrooloose/nerdcommenter'
+
+NeoBundle 'endwise.vim'
+NeoBundle 'Yggdroot/indentLine'
+NeoBundleLazy 'Bexec'
+NeoBundleLazy 'scrooloose/nerdtree'
+NeoBundleLazy 'majutsushi/tagbar'
+NeoBundleLazy 'AndrewRadev/linediff.vim.git'
+NeoBundleLazy 'xuhdev/SingleCompile', {'autoload': {'commands': ['SCCompile', 'SCCompileRun']}}
+" }}}1
+
+" ColorSchemes {{{1
+NeoBundle 'altercation/vim-colors-solarized.git'
+" }}}1
+
+" Advanced Editing {{{1
+"NeoBundle 'AutoComplPop'
+NeoBundle 'Valloric/YouCompleteMe', {'augroup': 'youcompletemeStart', 
+  \ 'build': {
+    \ 'mac': './install.sh --clang-completer',
+    \ 'unix': './install.sh --clang-completer',
+    \ 'cygwin': './install.sh --clang-completer',
+    \ },
+  \ }
+NeoBundle 'rking/ag.vim.git'
+NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'drmingdrmer/xptemplate.git', {'augroup': 'XPT'}
+NeoBundle 'vis'
+NeoBundle 'VisIncr'
+NeoBundle 'Align'
+NeoBundle 'LargeFile'
+NeoBundle 'ZoomWin'
+NeoBundle 'genutils'
+NeoBundle 'foldcol.vim'
+NeoBundle 'foldutil.vim'
+NeoBundle 'tpope/vim-abolish.git'
+NeoBundle 'tpope/vim-dispatch' " dispatch.vim: asynchronous build and test dispatcher
+NeoBundleLazy 'vimwiki', {'autoload': {'mappings': '<leader>ww'},}
+NeoBundleLazy 'bufexplorer.zip', {'autoload': {'mappings': '<leader>be'},}
+NeoBundleLazy 'tpope/vim-rsi.git'
+NeoBundleLazy 'terryma/vim-multiple-cursors.git', {'name': 'multiple-cursors'}
+NeoBundleLazy 'sessionman.vim'
+NeoBundleLazy 'range-search.vim'
+NeoBundleLazy 'tpope/vim-afterimage.git'
+NeoBundleLazy 'chrisbra/NrrwRgn.git'
+NeoBundleLazy 'mileszs/ack.vim.git'
+"}}}1
+
+" Utils {{{1
+NeoBundle 'Shougo/vimproc', {
+    \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+NeoBundle 'Shougo/unite.vim.git'
+NeoBundle 'Shougo/vimfiler', {'depends' : 'Shougo/unite.vim'}
+
+NeoBundle 'cecutil' " Some utilities used by several of my scripts (window positioning, mark handling)
+NeoBundle 'tangledhelix/vim-octopress.git'
+NeoBundle 'kana/vim-fakeclip'
+NeoBundle 'a.vim'
+NeoBundle 'Lokaltog/vim-powerline.git'
+NeoBundle 'localvimrc', {'augroup': 'localvimrc'}
+
+" related to tmux 
+NeoBundle 'kikijump/tslime.vim.git'
+NeoBundle 'epeli/slimux.git'
+NeoBundle 'tpope/vim-tbone' " tbone.vim: tmux basics
+
+NeoBundleLazy 'dhruvasagar/vim-table-mode', {'depends':  'godlygeek/tabular',
+  \ 'autoload': {
+    \ 'commands': ['TableModeEnable', 'TableModeToggle', 'Tableize'],
+    \ 'mappings': '<leader>tm',
+    \},
+  \} " VIM Table Mode for blazing fast instant table creation.
+
+NeoBundleLazy 'renamer.vim', {'autoload': {'commands': 'Renamer',},}
+NeoBundleLazy 'vimGTD', {'autoload': {'filetypes': ['gtd',],},}
+NeoBundleLazy 'TwitVim'
+NeoBundleLazy 'quickrun.vim'
+NeoBundleLazy 'DirDiff.vim'
+NeoBundleLazy 'DirDo.vim'
+NeoBundleLazy 'greplace.vim'
+NeoBundleLazy 'ViewOutput', {'autoload': {'commands': 'VO'}}
+NeoBundleLazy 'ScreenShot'
+NeoBundleLazy 'HiColors'
+NeoBundleLazy 'TVO--The-Vim-Outliner'
+
+" needed for fetching schemes online. and much more
+NeoBundleLazy 'mattn/webapi-vim' 
+NeoBundleLazy 'Rykka/colorv.vim', {'depends': 'mattn/webapi-vim'}
+
+NeoBundleLazy 'ppwwyyxx/vim-PinyinSearch', {'name': 'pinyinsearch'}
+
+"NeoBundleLazy 'lpenz/vimcommander', {'autoload': {'mappings': ';vc'}} " Total-commander-like file manager for VIM
+"NeoBundle 'lpenz/vimcommander', {'directory': 'vimcommander/plugin'}
+
+"}}}1
+
+" Ruby Vundles {{{1
+NeoBundleLazy 'tpope/vim-rails.git', {'autoload': {'filetypes': ['ruby', 'rails'],},}
+NeoBundleLazy 'vim-ruby/vim-ruby.git', {'autoload': {'filetypes': ['ruby', 'rails'],},}
+NeoBundleLazy 'janx/vim-rubytest', {'autoload': {'filetypes': ['ruby', 'rails'],},}
+NeoBundleLazy 'ri-browser', {'autoload': {'filetypes': ['ruby', 'rails'],},}
+" }}}1
+
+" Python Vundles {{{1
+NeoBundleLazy 'python.vim', {'autoload': {'filetypes': ['python',],},}
+NeoBundleLazy 'fs111/pydoc.vim', {'autoload': {'filetypes': ['python',],},}
+NeoBundleLazy 'python_match.vim', {'autoload': {'filetypes': ['python',],},}
+" }}}1
+
+" Web Vundles {{{1
+NeoBundleLazy 'rstacruz/sparkup', {'rtp': 'vim/', 'autoload': {'filetypes': ['html', 'js', 'css', 'xml'],},}
+NeoBundleLazy 'mattn/zencoding-vim', {'autoload': {'filetypes': ['html', 'js', 'css', 'xml'],},}
+NeoBundleLazy 'sukima/xmledit', {'autoload': {'filetypes': ['html', 'js', 'css', 'xml'],},}
+NeoBundleLazy 'jsbeautify', {'autoload': {'filetypes': ['html', 'js', 'css', 'xml'],},}
+NeoBundleLazy 'vim-coffee-script', {'autoload': {'filetypes': ['html', 'js', 'css', 'xml'],},}
+" }}}1
+
+" Git Utils {{{1
+NeoBundle 'tpope/vim-fugitive'
+NeoBundleLazy 'gregsexton/gitv', {'autoload': {'commands': 'Gitv'}}
+NeoBundleLazy 'Gist.vim', {'autoload': {'commands': 'Gist'}}
+"}}}1
+
+"" C/C++ NeoBundles {{{1
+"for i in ['c.vim', 'CRefVim', 'OmniCppComplete', 'derekwyatt/vim-protodef', 'FSwitch']
+NeoBundleLazy 'OmniCppComplete', {'autoload': {'filetypes': ['c', 'cpp', 'h'],},}
+NeoBundleLazy 'derekwyatt/vim-protodef', {'autoload': {'filetypes': ['c', 'cpp', 'h'],},}
+NeoBundleLazy 'FSwitch', {'autoload': {'filetypes': ['c', 'cpp', 'h'],},}
+
+" Qt
+NeoBundleLazy 'https://bitbucket.org/kh3phr3n/vim-qt-syntax.git', {'autoload': {'filetypes': ['c', 'cpp', 'h'],},}
+"" }}}1
+
+" SQL Vundles {{{1
+NeoBundleLazy 'SQLUtilities'
+NeoBundleLazy 'dbext.vim'
+" }}}1
+
+"" games {{{1
+NeoBundleLazy 'sokoban.vim' 
+NeoBundleLazy 'TeTrIs.vim'
+""}}}1
+
+" vim: ft=vim
