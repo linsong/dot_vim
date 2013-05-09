@@ -21,3 +21,10 @@ template <typename T>
     `cursor^
 }
 ..XPT
+
+XPT {{ hint={\ function\ body\ }
+{
+    `cursor^
+}
+
+..XPT

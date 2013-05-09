@@ -64,6 +64,10 @@ private:
 ..XPT
 
 " include shortcuts
+XPT iobject 
+#include <QtCore/QObject>`cursor^
+..XPT 
+
 XPT istring 
 #include <QtCore/QString>`cursor^
 ..XPT 
@@ -124,6 +128,14 @@ XPT igui
 #include <QtGui/Q`Dialog^> `cursor^
 ..XPT
 
+XPT iboxlayout 
+#include <QtGui/QBoxLayout> `cursor^
+..XPT
+
+XPT idatetime 
+#include <QtCore/QDateTime> `cursor^
+..XPT
+
 XPT sectionheader " section header
 ////////////////////////////////////////////////////////////////
 // `cursor^
@@ -132,4 +144,23 @@ XPT sectionheader " section header
 ..XPT
 
 XPT sh alias=sectionheader
+
+XPT qproperty " define property
+XSET actionType=Choose(['READ', 'WRITE', 'NOTIFY', 'RESET'])
+Q_PROPERTY( `type^ `name^ `READ^ `readFunc^ `more...^`actionType^ `funcName^ `more...^)
+
+`type^ `readFunc^() const 
+{ return m_`name^; }
+
+`type^ m_`name^;
+`cursor^
+..XPT
+
+XPT accessor " define property getter and setter 
+`type^ `propName^() const
+{ return m_`propName^; } 
+void set`propName^(`type^ `propName^)
+{ m_`propName^ = `propName^; }
+`cursor^
+..XPT
 

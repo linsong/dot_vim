@@ -49,16 +49,18 @@ NeoBundle 'rking/ag.vim.git'
 NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'drmingdrmer/xptemplate.git', {'augroup': 'XPT'}
 NeoBundle 'vis'
-NeoBundle 'VisIncr'
 NeoBundle 'Align'
 NeoBundle 'LargeFile'
 NeoBundle 'ZoomWin'
 NeoBundle 'genutils'
-NeoBundle 'foldcol.vim'
-NeoBundle 'foldutil.vim'
 NeoBundle 'tpope/vim-abolish.git'
 NeoBundle 'tpope/vim-dispatch' " dispatch.vim: asynchronous build and test dispatcher
-NeoBundleLazy 'vimwiki', {'autoload': {'mappings': '<leader>ww'},}
+NeoBundle 'vimwiki'
+NeoBundleLazy 'Raimondi/delimitMate'
+
+NeoBundleLazy 'VisIncr'
+NeoBundleLazy 'foldcol.vim'
+NeoBundleLazy 'foldutil.vim'
 NeoBundleLazy 'bufexplorer.zip', {'autoload': {'mappings': '<leader>be'},}
 NeoBundleLazy 'tpope/vim-rsi.git'
 NeoBundleLazy 'terryma/vim-multiple-cursors.git', {'name': 'multiple-cursors'}
@@ -89,9 +91,11 @@ NeoBundle 'Lokaltog/vim-powerline.git'
 NeoBundle 'localvimrc', {'augroup': 'localvimrc'}
 
 " related to tmux 
-NeoBundle 'kikijump/tslime.vim.git'
+NeoBundleLazy 'kikijump/tslime.vim.git'
 NeoBundle 'epeli/slimux.git'
 NeoBundle 'tpope/vim-tbone' " tbone.vim: tmux basics
+
+NeoBundle 'mhinz/vim-startify'
 
 NeoBundleLazy 'dhruvasagar/vim-table-mode', {'depends':  'godlygeek/tabular',
   \ 'autoload': {
@@ -137,11 +141,12 @@ NeoBundleLazy 'python_match.vim', {'autoload': {'filetypes': ['python',],},}
 " }}}1
 
 " Web Vundles {{{1
+NeoBundleLazy 'vim-coffee-script', {'autoload': {'filetypes': ['html', 'js', 'css', 'xml'],},}
+NeoBundleLazy 'gregsexton/MatchTag', {'autoload': {'filetypes': ['html', 'xml'],},}
 NeoBundleLazy 'rstacruz/sparkup', {'rtp': 'vim/', 'autoload': {'filetypes': ['html', 'js', 'css', 'xml'],},}
 NeoBundleLazy 'mattn/zencoding-vim', {'autoload': {'filetypes': ['html', 'js', 'css', 'xml'],},}
 NeoBundleLazy 'sukima/xmledit', {'autoload': {'filetypes': ['html', 'js', 'css', 'xml'],},}
 NeoBundleLazy 'jsbeautify', {'autoload': {'filetypes': ['html', 'js', 'css', 'xml'],},}
-NeoBundleLazy 'vim-coffee-script', {'autoload': {'filetypes': ['html', 'js', 'css', 'xml'],},}
 " }}}1
 
 " Git Utils {{{1
