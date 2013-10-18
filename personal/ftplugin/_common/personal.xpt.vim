@@ -17,9 +17,4 @@ bla bla
 let s:f = g:XPTfuncs()
 
 " ========================= Function and Variables =============================
-"fun! s:f.(...) "{{{
-  "let h = expand('%:t')
-  "let h = substitute(h, '\.', '_', 'g') " replace . with _
 
-  "return h
-"endfunction "}}}

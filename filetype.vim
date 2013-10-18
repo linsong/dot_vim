@@ -52,5 +52,19 @@ augroup filetypedetect
 
   autocmd BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
-  au BufNewFile,BufRead *.sedona setf sedona
+  au BufNewFile,BufRead *.sedona setf java
+
+  au BufNewFile,BufRead *.gx setf xml
+  au BufNewFile,BufRead *.gr setf xml
+  au BufNewFile,BufRead *.grl setf xml
+  au BufNewFile,BufRead *.cps setf xml
+  au BufRead *.gr :normal V=
+  au BufRead *.gx :normal V=
+  au BufRead *.grl :normal V=
+  au BufRead *.cps :normal V=
+
+  augroup tracwiki 
+    au! BufRead,BufNewFile *.tracwiki   setfiletype tracwiki 
+  augroup END 
+
 augroup END

@@ -7,8 +7,11 @@ XPTinclude
 XPTemplateDef
 
 XPT connect wrap=source " connect a signal to a slot
-connect(`source^, SIGNAL(`signal_name^(`param1^`more1...^, `param2^`more1...^)), `this^, SLOT(`slot_name^(`param3^`more2...^, `param4^`more2...^)));
+XSET param3=R('more1')
+connect(`source^, SIGNAL(`signal_name^(`param1^`more1...^`, `param2?^`more1...^)), `this^, SLOT(`signal_name^{S(V(), '\^.', 'on\u&')}^(`param3^)));
 `cursor^
+
+" connect(`source^, SIGNAL(`signal_name^(`param1^`more1...^`, `param2?^`more1...^)), `this^, SLOT(`signal_name^{S(V(), '\^.', 'on\u&')}^(`param3^`more2...^, `param4^`more2...^)));
 
 XPT QAction " create new QAction instance 
 QAction(`icon^, `tr...{{^tr("`cursor^")`}}^, `this^);
@@ -46,11 +49,12 @@ QVERIFY(`real^ == `expected^);
 ..XPT
 
 XPT qclass " create qt base class 
-class `classname^ : public QObject 
+XSET classname|def=CamelCase(fileRoot())
+class `classname^ : public `QObject^
 {
     Q_OBJECT
 public: 
-    explicit `classname^(QObject * parent);
+    explicit `classname^(`QObject^ * parent=NULL);
     ~`classname^();
 
 signals:
@@ -163,4 +167,6 @@ void set`propName^(`type^ `propName^)
 { m_`propName^ = `propName^; }
 `cursor^
 ..XPT
+
+
 

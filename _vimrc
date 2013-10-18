@@ -160,6 +160,8 @@ endif
 
 :set lazyredraw
 
+:set modelines=5
+
 "## }}}1
 
 "## Encodings {{{1
@@ -299,7 +301,7 @@ endif
     " Make navigate tabs easier
     :nnoremap <silent> <M-.> gt
     :nnoremap <silent> <M-,> gT
-    :nnoremap <silent> <M-n> :tabnew<CR>
+    ":nnoremap <silent> <M-n> :tabnew<CR>
     :nnoremap <silent> <M-q> :tabclose<CR>
 
     :nnoremap <silent> <M->> :if tabpagenr() == tabpagenr("$")\|tabm 0\|else\|exe "tabm ".tabpagenr()\|endif<CR>
@@ -716,7 +718,9 @@ endif
 
         " windows setting end }}}2
     elseif has('macunix') "macosx specific settings {{{2
-        set guifont=Monaco:h13
+        "set guifont=Monaco:h13
+        " set guifont=Source\ Code\ Pro:h18
+        set guifont=Anonymous\ Pro:h18
         let Grep_Xargs_Options = '-0' 
         " macosx specific settings end}}}2
     else  " linux like platform specific setting {{{2
@@ -871,10 +875,12 @@ if has("autocmd")
 
     " syntax omnicomplete {{{2
     if has("autocmd") && exists("+omnifunc")
+      augroup omniFunc_augroup
         autocmd Filetype *
                 \   if &omnifunc == "" |
                 \       setlocal omnifunc=syntaxcomplete#Complete |
                 \   endif
+      augroup END
     endif
     "}}}2
     
@@ -1759,8 +1765,8 @@ endif " has("autocmd")
     let g:syntastic_enable_signs = 1
     let g:syntastic_auto_loc_list = 0
     let g:syntastic_mode_map = { 'mode': 'passive',
-                               \ 'active_filetypes': ['python', 'cpp'],
-                               \ 'passive_filetypes': ['ruby', 'puppet'] }
+                               \ 'active_filetypes': [],
+                               \ 'passive_filetypes': ['python', 'cpp', 'ruby', 'puppet'] }
     "}}}2
 
     "### blogit {{{2
@@ -1906,7 +1912,7 @@ endif " has("autocmd")
     
     "### unite {{{2
     nnoremap    [unite]   <Nop>
-    nmap    m [unite]
+    nmap    ] [unite]
 
     nnoremap <silent> [unite]c  :<C-u>UniteWithCurrentDir
           \ -buffer-name=files buffer file_mru bookmark file<CR>
@@ -1960,7 +1966,24 @@ endif " has("autocmd")
           \ }
     "}}}2
 
+    "### YouCompleteMe {{{2
+    let g:ycm_confirm_extra_conf = 0
+    "}}}2
 
+    "### Vitra {{{2
+    let g:tracServerList = {}
+    let g:tracServerList['cpt-tools'] = {
+        \ 'schema': 'http',
+        \ 'auth': 'vincent:hellofoo',
+        \ 'server': 'pi:3000',
+        \ 'rpc_path': '/login/rpc',
+        \ 'auth_type': 'basic',
+        \ }
+    "}}}2
+    
+    "### EasyAlign {{{2
+    vnoremap <silent> <Enter> :EasyAlign<cr>
+    "}}}2
 "## }}}1
 
 "## Xterm colors defination {{{1 
