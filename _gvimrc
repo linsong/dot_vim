@@ -27,7 +27,9 @@ endif
 " set guifont=-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
 "
 
-colorscheme desert
+" colorscheme desert
+colorscheme werks
+
 "set colorscheme randomly
 "if ((strftime("%H") < 17 && strftime("%H") > 7))
   "let g:colorscheme_list = ['sienna', 'oceanlight', 'autumnleaf']

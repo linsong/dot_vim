@@ -144,7 +144,7 @@ endif
 
 :set number
 
-:let g:mapleader='\'
+:let g:mapleader='['
 
 if has("gui_macvim")
     :set transparency=5
@@ -423,6 +423,8 @@ endif
 
     nnoremap <silent> <f5> :make<CR>
     imap <silent> <f5> <Esc>:w<CR>:make<CR>i
+    
+    map <silent> <leader>ss :syntax sync fromstart<CR>
 
 "## }}}1
 
@@ -1336,6 +1338,15 @@ endif " has("autocmd")
 
     "### setting for a.vim {{{2
     let g:alternateNoDefaultAlternate = 1
+
+    " " for objective-c 
+    " let g:alternateExtensions_m = 'h'
+    " if exists('g:alternateExtensions_h')
+    "   let g:alternateExtensions_h = g:alternateExtensions_h . ',m'
+    " else
+    "   let g:alternateExtensions_h = 'm'
+    " endif
+
     map ;aa :A<CR>
     map ;as :AS<CR>
     map ;av :AV<CR>
@@ -1800,8 +1811,9 @@ endif " has("autocmd")
     ""if nothing matched in xpt, try supertab
     "let g:xptemplate_fallback = '<Plug>supertabKey'
 
-    """xpt uses <Tab> as trigger key
+    ""xpt uses <Tab> as trigger key
     "let g:xptemplate_key = '<Tab>'
+    let g:xptemplate_key = '<c-m>'
 
     "" trigger snippet with <Tab> no matter popup menu opened or not
     "let g:xptemplate_key = '<Plug>triggerxpt'
@@ -1888,6 +1900,29 @@ endif " has("autocmd")
       "\ 'fallback': 'find %s -type f'
       "\ }
     let g:ctrlp_extensions = ['buffertag', 'dir', 'bookmarkdir'] " ['dir', 'tag', 'rtscript', 'changes']
+    let g:ctrlp_prompt_mappings = { 'PrtCurLeft()': ['<left>', '<c-^>'] }
+
+    " PyMatcher for CtrlP, PyMatcher can improve CtrlP's performance a lot
+    if !has('python')
+        echo 'In order to use pymatcher plugin, you need +python compiled vim'
+    else
+        let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+    endif
+
+    " Set delay to prevent extra search
+    let g:ctrlp_lazy_update = 350
+
+    " Do not clear filenames cache, to improve CtrlP startup
+    " You can manualy clear it by <F5>
+    let g:ctrlp_clear_cache_on_exit = 0
+
+    " If ag is available use it as filename list generator instead of 'find'
+    if executable("ag")
+      set grepprg=ag\ --nogroup\ --nocolor
+      let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
+    endif
+    " end of PyMatcher
+
     "}}}2
 
     "### rainbow {{{2

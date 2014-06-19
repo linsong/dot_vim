@@ -20,34 +20,36 @@ NeoBundleLazy 'goldfeld/vim-seek'
 " }}}1
 
 " Coding {{{1
-NeoBundle 'scrooloose/syntastic.git'
+" NeoBundle 'scrooloose/syntastic.git'
 " NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tomtom/tcomment_vim'
 
 NeoBundle 'endwise.vim'
 NeoBundle 'Yggdroot/indentLine'
-NeoBundleLazy 'Bexec'
-NeoBundleLazy 'scrooloose/nerdtree'
+" NeoBundleLazy 'Bexec'
+" NeoBundleLazy 'scrooloose/nerdtree'
 NeoBundleLazy 'majutsushi/tagbar'
 NeoBundleLazy 'AndrewRadev/linediff.vim.git'
-NeoBundleLazy 'xuhdev/SingleCompile', {'autoload': {'commands': ['SCCompile', 'SCCompileRun']}}
+" NeoBundleLazy 'xuhdev/SingleCompile', {'autoload': {'commands': ['SCCompile', 'SCCompileRun']}}
 " }}}1
 
 " ColorSchemes {{{1
 NeoBundle 'altercation/vim-colors-solarized.git'
+" NeoBundle 'biskark/vim-ultimate-colorscheme-utility.git'
 " }}}1
 
 " Advanced Editing {{{1
-"NeoBundle 'AutoComplPop'
-NeoBundle 'Valloric/YouCompleteMe', {'augroup': 'youcompletemeStart', 
-  \ 'build': {
-    \ 'mac': './install.sh --clang-completer',
-    \ 'unix': './install.sh --clang-completer',
-    \ 'cygwin': './install.sh --clang-completer',
-    \ },
-  \ }
+" NeoBundle 'AutoComplPop'
+" NeoBundle 'Valloric/YouCompleteMe', {'augroup': 'youcompletemeStart', 
+"  \ 'build': {
+"    \ 'mac': './install.sh --clang-completer',
+"    \ 'unix': './install.sh --clang-completer',
+"    \ 'cygwin': './install.sh --clang-completer',
+"    \ },
+"  \ }
 NeoBundle 'rking/ag.vim.git'
 NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'FelikZ/ctrlp-py-matcher'
 NeoBundle 'drmingdrmer/xptemplate.git', {'augroup': 'XPT'}
 NeoBundle 'vis'
 "NeoBundle 'Align'
@@ -56,25 +58,25 @@ NeoBundle 'LargeFile'
 NeoBundle 'ZoomWin'
 NeoBundle 'genutils'
 NeoBundle 'tpope/vim-abolish.git'
-NeoBundle 'tpope/vim-dispatch' " dispatch.vim: asynchronous build and test dispatcher
+" NeoBundle 'tpope/vim-dispatch' " dispatch.vim: asynchronous build and test dispatcher
 NeoBundle 'vimwiki'
 NeoBundle 'chrisbra/NrrwRgn.git'
 NeoBundle 'sk1418/Join'
-NeoBundle 'maxbrunsfeld/vim-yankstack'
+" NeoBundle 'maxbrunsfeld/vim-yankstack'
 NeoBundle 'werks.vim'
-
+" NeoBundle 'gcmt/wildfire.vim'
 
 NeoBundleLazy 'Raimondi/delimitMate'
 NeoBundleLazy 'VisIncr'
 NeoBundleLazy 'foldcol.vim'
 NeoBundleLazy 'foldutil.vim'
 NeoBundleLazy 'bufexplorer.zip', {'autoload': {'mappings': '<leader>be'},}
-NeoBundleLazy 'tpope/vim-rsi.git'
-NeoBundleLazy 'terryma/vim-multiple-cursors.git', {'name': 'multiple-cursors'}
+" NeoBundleLazy 'tpope/vim-rsi.git'
+" NeoBundleLazy 'terryma/vim-multiple-cursors.git', {'name': 'multiple-cursors'}
 NeoBundleLazy 'sessionman.vim'
-NeoBundleLazy 'range-search.vim'
-NeoBundleLazy 'tpope/vim-afterimage.git'
-NeoBundleLazy 'mileszs/ack.vim.git'
+" NeoBundleLazy 'range-search.vim'
+" NeoBundleLazy 'tpope/vim-afterimage.git'
+" NeoBundleLazy 'mileszs/ack.vim.git'
 "}}}1
 
 " Utils {{{1
@@ -90,7 +92,7 @@ NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'Shougo/vimfiler', {'depends' : 'Shougo/unite.vim'}
 
 NeoBundle 'cecutil' " Some utilities used by several of my scripts (window positioning, mark handling)
-NeoBundle 'tangledhelix/vim-octopress.git'
+" NeoBundle 'tangledhelix/vim-octopress.git'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'a.vim'
 NeoBundle 'Lokaltog/vim-powerline.git'
@@ -107,8 +109,8 @@ NeoBundle 'mhinz/vim-startify'
 "NeoBundle 'nsmgr8/vitra'
 "NeoBundle 'tracwiki' " 0.4   Vim syntax file for Trac wiki syntax
 
-NeoBundle 'rizzatti/funcoo.vim'
-NeoBundle 'rizzatti/dash.vim'
+" NeoBundle 'rizzatti/funcoo.vim'
+" NeoBundle 'rizzatti/dash.vim'
 
 NeoBundleLazy 'vim-scripts/rainbow_csv.vim', {
   \ 'autoload': {'commands': ['RainbowDelim']},
@@ -185,6 +187,11 @@ NeoBundleLazy 'https://bitbucket.org/kh3phr3n/vim-qt-syntax.git', {'autoload': {
 " SQL Vundles {{{1
 NeoBundleLazy 'SQLUtilities'
 NeoBundleLazy 'dbext.vim'
+" }}}1
+
+" iOS Vundles {{{1
+NeoBundle 'msanders/cocoa.vim'
+"NeoBundle 'eraserhd/vim-ios' " crashed vim
 " }}}1
 
 "" games {{{1
