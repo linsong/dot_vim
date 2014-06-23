@@ -77,6 +77,7 @@ NeoBundleLazy 'sessionman.vim'
 " NeoBundleLazy 'range-search.vim'
 " NeoBundleLazy 'tpope/vim-afterimage.git'
 " NeoBundleLazy 'mileszs/ack.vim.git'
+NeoBundle 'MattesGroeger/vim-bookmarks'
 "}}}1
 
 " Utils {{{1
