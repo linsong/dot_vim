@@ -18,3 +18,14 @@ let s:f = g:XPTfuncs()
 
 " ========================= Function and Variables =============================
 
+" added by vincent 2013/10/18 {{{
+fun! s:f.Capitalize( v )
+  return substitute(a:v, '^.', '\u&', '')
+endfunction
+
+fun! s:f.CamelCase(...)
+  let str = a:0 == 0 ? self.V() : a:1
+  let r = substitute(substitute(str, "[\/ _]", ' ', 'g'), '\<.', '\u&', 'g')
+  return substitute(r, " ", '', 'g')
+endfunction
+" added by vincent }}}

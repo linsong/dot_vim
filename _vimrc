@@ -1790,10 +1790,10 @@ endif " has("autocmd")
     "}}}2
     
     "### screen {{{2
-    let g:ScreenImpl = 'Tmux'
+    " let g:ScreenImpl = 'Tmux'
     "let g:ScreenImpl = 'GnuScreen'
     "noremap <Enter>  exists('ScreenSend') ? :ScreenSend : <Enter><CR>
-    noremap ;e :call ScreenShellSend("ruby -Itest " . expand("%:p"))<CR>
+    " noremap ;e :call ScreenShellSend("ruby -Itest " . expand("%:p"))<CR>
     "}}}2
 
     "### fugitive {{{2
@@ -1846,6 +1846,15 @@ endif " has("autocmd")
     
     "### EasyMotion {{{2
     let g:EasyMotion_leader_key = ';'
+    let g:EasyMotion_smartcase = 1
+    let g:EasyMotion_enter_jump_first = 1
+
+    map ss <Plug>(easymotion-s2)
+    map s2 <Plug>(easymotion-s2)
+    map sn <Plug>(easymotion-sn)
+
+    map ;l <Plug>(easymotion-lineforward)
+    map ;h <Plug>(easymotion-linebackward)
     "}}}2
 
     "### Ack {{{2
@@ -1900,8 +1909,8 @@ endif " has("autocmd")
       "\ 'fallback': 'find %s -type f'
       "\ }
     let g:ctrlp_extensions = ['buffertag', 'dir', 'bookmarkdir'] " ['dir', 'tag', 'rtscript', 'changes']
-    let g:ctrlp_prompt_mappings = { 'PrtCurLeft()': ['<left>', '<c-^>'] }
-
+    let g:ctrlp_prompt_mappings = { 'PrtCurLeft()': ['<left>', '<c-^>'], 'PrtBS()': ['<bs>', '<c-]>', '<c-h>'] }
+    
     " PyMatcher for CtrlP, PyMatcher can improve CtrlP's performance a lot
     if !has('python')
         echo 'In order to use pymatcher plugin, you need +python compiled vim'
@@ -1910,16 +1919,18 @@ endif " has("autocmd")
     endif
 
     " Set delay to prevent extra search
-    let g:ctrlp_lazy_update = 350
+    let g:ctrlp_lazy_update = 150
 
     " Do not clear filenames cache, to improve CtrlP startup
     " You can manualy clear it by <F5>
     let g:ctrlp_clear_cache_on_exit = 0
+    
+    let g:ctrlp_max_files = 0
 
     " If ag is available use it as filename list generator instead of 'find'
     if executable("ag")
       set grepprg=ag\ --nogroup\ --nocolor
-      let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
+      "let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
     endif
     " end of PyMatcher
 
@@ -2019,6 +2030,14 @@ endif " has("autocmd")
     "### EasyAlign {{{2
     vnoremap <silent> <Enter> :EasyAlign<cr>
     "}}}2
+    
+    "### Dash {{{2
+    let g:dash_map = {
+      \ 'cpp' : 'qt4'
+      \ }
+    :nmap <silent> ,k <Plug>DashSearch
+    "}}}2
+    
 "## }}}1
 
 "## Xterm colors defination {{{1 

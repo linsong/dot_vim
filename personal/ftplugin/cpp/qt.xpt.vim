@@ -168,5 +168,13 @@ void set`propName^(`type^ `propName^)
 `cursor^
 ..XPT
 
+XPT qtmain 
+#include <QtCore/QCoreApplication>
 
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+    `cursor^
+}
 
+..XPT

@@ -110,7 +110,7 @@ function! FindAndOpenHtmlFile(filename, paths)
   for path in a:paths
     let l:filepath = path . a:filename
     if filereadable(l:filepath)
-      let l:url = "file://" . l:filepath
+      let l:url = "file://" . fnameescape(substitute(l:filepath, " ", "%20", ""))
       execute "!open " . l:url
       return
     endif

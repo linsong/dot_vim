@@ -4,6 +4,7 @@
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Basic Editing {{{1
+NeoBundle 'tpope/vim-repeat'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'bsl/obviousmode'
@@ -50,12 +51,13 @@ NeoBundle 'altercation/vim-colors-solarized.git'
 NeoBundle 'rking/ag.vim.git'
 NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'FelikZ/ctrlp-py-matcher'
+NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'drmingdrmer/xptemplate.git', {'augroup': 'XPT'}
 NeoBundle 'vis'
 "NeoBundle 'Align'
 NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'LargeFile'
-NeoBundle 'ZoomWin'
+" NeoBundle 'LargeFile'
+" NeoBundle 'ZoomWin'
 NeoBundle 'genutils'
 NeoBundle 'tpope/vim-abolish.git'
 " NeoBundle 'tpope/vim-dispatch' " dispatch.vim: asynchronous build and test dispatcher
@@ -110,8 +112,8 @@ NeoBundle 'mhinz/vim-startify'
 "NeoBundle 'nsmgr8/vitra'
 "NeoBundle 'tracwiki' " 0.4   Vim syntax file for Trac wiki syntax
 
-" NeoBundle 'rizzatti/funcoo.vim'
-" NeoBundle 'rizzatti/dash.vim'
+NeoBundle 'rizzatti/funcoo.vim'
+NeoBundle 'rizzatti/dash.vim'
 
 NeoBundleLazy 'vim-scripts/rainbow_csv.vim', {
   \ 'autoload': {'commands': ['RainbowDelim']},
@@ -191,7 +193,7 @@ NeoBundleLazy 'dbext.vim'
 " }}}1
 
 " iOS Vundles {{{1
-NeoBundle 'msanders/cocoa.vim'
+" NeoBundle 'msanders/cocoa.vim'
 "NeoBundle 'eraserhd/vim-ios' " crashed vim
 " }}}1
 
